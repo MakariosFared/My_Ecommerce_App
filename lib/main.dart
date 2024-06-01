@@ -1,5 +1,6 @@
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
 import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,10 +12,13 @@ class DikkanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+      ),
       debugShowCheckedModeBanner: false,
       // home: SplashView(),
-      home: IntroductionView(),
+      home: const IntroductionView(),
     );
   }
 }

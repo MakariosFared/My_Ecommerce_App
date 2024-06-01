@@ -1,48 +1,50 @@
-import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
+import 'package:dikkan/Core/utils/assets.dart';
+import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:introduction_screen/introduction_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class IntroductionViewBody extends StatelessWidget {
+class IntroductionViewBody extends StatefulWidget {
   const IntroductionViewBody({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return IntroductionScreen(
-      showSkipButton: false,
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Get Started'),
-      dotsDecorator: DotsDecorator(
-        size: const Size(10.0, 10.0),
-        color: Colors.grey,
-        activeColor: Colors.black,
-        activeSize: const Size(22.0, 10.0),
-        activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.0),
-        ),
-      ),
-      onDone: () {
-        print('Done! Navigating to SplashView');
-      },
-      pages: getIntroPages(),
-    );
-  }
+  State<IntroductionViewBody> createState() => _IntroductionViewBodyState();
 }
 
-getIntroPages() {
-  return [
-    PageViewModel(
-      decoration: const PageDecoration(imageFlex: 3),
-      titleWidget: const Text('Delicious Deliveries, Right at Your Doorstep!'),
-      body: 'Explore a World of Culinary Delights, Delivered Fast and Fresh!',
-      image: SvgPicture.asset('assets/images/intro_image_1.svg'),
-    ),
-    PageViewModel(
-      decoration: const PageDecoration(imageFlex: 2),
-      titleWidget: const Text('Delicious Deliveries, Right at Your Doorstep!'),
-      body: 'Explore a World of Culinary Delights, Delivered Fast and Fresh!',
-      image: SvgPicture.asset('assets/images/intro_image_2.svg'),
-    ),
-  ];
+class _IntroductionViewBodyState extends State<IntroductionViewBody> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          SizedBox(
+            height: 365,
+            width: 365,
+            child: SvgPicture.asset('assets/images/intro_image_1.svg'),
+          ),
+          Container(
+            color: Colors.blue,
+            height: 331,
+            width: 365,
+            child: Column(
+              children: [
+                Text(
+                  textAlign: TextAlign.center,
+                  'Delicious Deliveries, \nRight at Your Doorstep!',
+                  style: Styles.textStyle24.copyWith(color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  textAlign: TextAlign.center,
+                  'Explore a World of Culinary Delights, \nDelivered Fast and Fresh!',
+                  style: Styles.textStyle16.copyWith(color: Colors.black),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }
