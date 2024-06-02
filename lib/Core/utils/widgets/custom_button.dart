@@ -1,4 +1,5 @@
 import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -20,7 +21,7 @@ class CustomButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          backgroundColor: const Color(0xff17AF98),
+          backgroundColor: kGreenColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
           ),
