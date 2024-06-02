@@ -5,6 +5,6 @@ class IntroScreenPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(itemBuilder: (BuildContext context, int index) {  },);
+    return Column();
   }
 }
