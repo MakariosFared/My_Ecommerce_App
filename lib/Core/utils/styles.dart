@@ -12,4 +12,9 @@ abstract class Styles {
     fontFamily: kPoppins,
     fontWeight: FontWeight.w500,
   );
+  static const textStyle18 = TextStyle(
+    fontSize: 18,
+    fontFamily: kPoppins,
+    fontWeight: FontWeight.w700,
+  );
 }
