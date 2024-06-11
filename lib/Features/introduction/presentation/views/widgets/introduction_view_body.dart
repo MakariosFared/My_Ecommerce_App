@@ -1,6 +1,8 @@
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Features/introduction/data/models/intro_model.dart';
 import 'package:dikkan/Features/introduction/presentation/views/widgets/on_boarding_content.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class IntroductionViewBody extends StatefulWidget {
   const IntroductionViewBody({super.key});
@@ -34,7 +36,7 @@ class _IntroductionViewBodyState extends State<IntroductionViewBody> {
           Expanded(
             child: PageView.builder(
               controller: _pageController,
-              physics: const NeverScrollableScrollPhysics(),
+              // physics: const NeverScrollableScrollPhysics(),
               onPageChanged: (index) {
                 setState(() {
                   selectedIndex = index;
@@ -49,18 +51,17 @@ class _IntroductionViewBodyState extends State<IntroductionViewBody> {
                     title: item[index].title,
                     description: item[index].description,
                     selectedIndex: selectedIndex,
+                    buttonText: index != 2 ? 'Get Started' : 'English',
                     onPressed: () {
-                      // selectedIndex++;
-                      _pageController.nextPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeIn,
-                      );
+                      index == 2
+                          ? GoRouter.of(context).push(AppRouter.kLogIn)
+                          : _pageController.nextPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeIn,
+                            );
                     },
                     onTap: () {
-                      print('Indicator tapped');
-
                       selectedIndex = index;
-
                       _pageController.animateToPage(
                         index < item.length - 1 ? index + 1 : index,
                         duration: const Duration(milliseconds: 300),

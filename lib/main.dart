@@ -1,6 +1,4 @@
 import 'package:dikkan/Core/utils/app_router.dart';
-import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
-import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 

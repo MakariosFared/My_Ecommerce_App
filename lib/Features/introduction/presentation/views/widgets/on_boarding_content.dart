@@ -14,6 +14,7 @@ class OnBoardContent extends StatelessWidget {
     required this.selectedIndex,
     required this.onPressed,
     required this.onTap,
+    required this.buttonText,
   });
 
   final void Function()? onPressed;
@@ -21,6 +22,7 @@ class OnBoardContent extends StatelessWidget {
   final String image, title;
   final String? description;
   final int selectedIndex;
+  final String buttonText;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,44 +45,13 @@ class OnBoardContent extends StatelessWidget {
           height: 48,
         ),
         Expanded(
-          child: Container(
-            width: 365,
-            decoration: ShapeDecoration(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-            ),
-            child: Column(
-              children: [
-                ListCustomDots(selectedIndex: selectedIndex, onTap: onTap),
-                const SizedBox(
-                  height: 28,
-                ),
-                Text(
-                  textAlign: TextAlign.center,
-                  title,
-                  // 'Delicious Deliveries, \nRight at Your Doorstep!',
-                  style: Styles.textStyle24.copyWith(color: Colors.black),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  textAlign: TextAlign.center,
-                  description ?? '',
-                  style: Styles.textStyle16.copyWith(color: Colors.black),
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                CustomButton(
-                  text: 'Get Started',
-                  onPressed: onPressed,
-                ),
-              ],
-            ),
-          ),
+          child: ContentContainer(
+              selectedIndex: selectedIndex,
+              onTap: onTap,
+              title: title,
+              description: description,
+              buttonText: buttonText,
+              onPressed: onPressed),
         ),
         const SizedBox(
           height: 24,
@@ -90,3 +61,62 @@ class OnBoardContent extends StatelessWidget {
   }
 }
 
+class ContentContainer extends StatelessWidget {
+  const ContentContainer({
+    super.key,
+    required this.selectedIndex,
+    required this.onTap,
+    required this.title,
+    required this.description,
+    required this.buttonText,
+    required this.onPressed,
+  });
+
+  final int selectedIndex;
+  final void Function()? onTap;
+  final String title;
+  final String? description;
+  final String buttonText;
+  final void Function()? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 365,
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+      ),
+      child: Column(
+        children: [
+          ListCustomDots(selectedIndex: selectedIndex, onTap: onTap),
+          const SizedBox(
+            height: 28,
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            title,
+            style: Styles.textStyle24.copyWith(color: Colors.black),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            description ?? '',
+            style: Styles.textStyle16.copyWith(color: Colors.black),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          CustomButton(
+            text: buttonText,
+            onPressed: onPressed,
+          ),
+        ],
+      ),
+    );
+  }
+}
