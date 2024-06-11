@@ -1,14 +1,15 @@
 class IntroModel {
   final String title;
-  final String description;
+  String? description;
   final String image;
 
   IntroModel({
     required this.title,
-    required this.description,
+    this.description,
     required this.image,
   });
 }
+
 final item = [
   IntroModel(
     title: 'Delicious Deliveries, \nRight at Your Doorstep!',
@@ -17,13 +18,14 @@ final item = [
     image: 'assets/images/intro_image_1.svg',
   ),
   IntroModel(
-    title: 'Delicious Deliveries,',
-    description: 'Explore a World of Culinary Delights,',
-    image: 'assets/images/intro_image_1.svg',
+    title: 'Delicious Deliveries, \nRight at Your Doorstep!',
+    description:
+        'Explore a World of Culinary Delights, \nDelivered Fast and Fresh!',
+    image: 'assets/images/intro_image_2.svg',
   ),
   IntroModel(
-    title: 'Delicious Deliveries,',
-    description: 'Explore a World of Culinary Delights,',
-    image: 'assets/images/intro_image_1.svg',
+    title: 'Choose Your Language',
+    // description: '',
+    image: 'assets/images/intro_image_3.svg',
   ),
 ];

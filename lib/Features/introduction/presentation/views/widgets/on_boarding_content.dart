@@ -1,7 +1,7 @@
+import 'package:dikkan/Core/utils/assets.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_button.dart';
-import 'package:dikkan/Features/introduction/data/models/intro_model.dart';
-import 'package:dikkan/Features/introduction/presentation/views/widgets/custom_dots.dart';
+import 'package:dikkan/Features/introduction/presentation/views/widgets/list_custom_dots.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -10,16 +10,30 @@ class OnBoardContent extends StatelessWidget {
     super.key,
     required this.image,
     required this.title,
-    required this.description,
+    this.description,
     required this.selectedIndex,
+    required this.onPressed,
+    required this.onTap,
   });
 
-  final String image, title, description;
+  final void Function()? onPressed;
+  final void Function()? onTap;
+  final String image, title;
+  final String? description;
   final int selectedIndex;
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
+        SizedBox(
+          height: 54,
+          width: 84,
+          child: Image.asset(AssetsData.logo),
+        ),
+        const SizedBox(
+          height: 44,
+        ),
         SizedBox(
           height: 365,
           width: 365,
@@ -28,57 +42,51 @@ class OnBoardContent extends StatelessWidget {
         const SizedBox(
           height: 48,
         ),
-        Container(
-          // color: Colors.white,
-          height: 331,
-          width: 365,
-          decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+        Expanded(
+          child: Container(
+            width: 365,
+            decoration: ShapeDecoration(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+            child: Column(
+              children: [
+                ListCustomDots(selectedIndex: selectedIndex, onTap: onTap),
+                const SizedBox(
+                  height: 28,
+                ),
+                Text(
+                  textAlign: TextAlign.center,
+                  title,
+                  // 'Delicious Deliveries, \nRight at Your Doorstep!',
+                  style: Styles.textStyle24.copyWith(color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  textAlign: TextAlign.center,
+                  description ?? '',
+                  style: Styles.textStyle16.copyWith(color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                CustomButton(
+                  text: 'Get Started',
+                  onPressed: onPressed,
+                ),
+              ],
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  item.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: CustomDots(isActive: selectedIndex == index),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 28,
-              ),
-              Text(
-                textAlign: TextAlign.center,
-                title,
-                // 'Delicious Deliveries, \nRight at Your Doorstep!',
-                style: Styles.textStyle24.copyWith(color: Colors.black),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Text(
-                textAlign: TextAlign.center,
-                description,
-                // 'Explore a World of Culinary Delights, \nDelivered Fast and Fresh!',
-                style: Styles.textStyle16.copyWith(color: Colors.black),
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              const CustomButton(
-                text: 'Get Started',
-              )
-            ],
-          ),
-        )
+        ),
+        const SizedBox(
+          height: 24,
+        ),
       ],
     );
   }
 }
+

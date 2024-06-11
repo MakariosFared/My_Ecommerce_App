@@ -7,7 +7,7 @@ class CustomButton extends StatelessWidget {
     super.key,
     this.borderRadius,
     required this.text,
-    this.onPressed,
+    required this.onPressed,
   });
 
   final String text;
@@ -37,3 +37,5 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+
