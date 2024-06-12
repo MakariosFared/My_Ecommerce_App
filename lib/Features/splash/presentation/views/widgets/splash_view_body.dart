@@ -1,6 +1,5 @@
 import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/assets.dart';
-import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

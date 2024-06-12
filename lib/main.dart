@@ -23,8 +23,7 @@ class _DikkanAppState extends State<DikkanApp> {
       routerConfig: AppRouter.router,
 
       debugShowCheckedModeBanner: false,
-      // home: const SplashView(),
-      // home: const IntroductionView(),
+      
     );
   }
 }

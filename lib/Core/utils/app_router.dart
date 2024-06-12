@@ -1,5 +1,5 @@
 
-import 'package:dikkan/Features/auth/presentation/views/widgets/log_in_view.dart';
+import 'package:dikkan/Features/auth/presentation/views/log_in_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
 import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
