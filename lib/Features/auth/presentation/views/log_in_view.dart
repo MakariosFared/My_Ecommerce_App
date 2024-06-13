@@ -1,4 +1,5 @@
 import 'package:dikkan/Features/auth/presentation/views/widgets/log_in_view_body.dart';
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,6 +9,7 @@ class LogInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimaryColor,
       body: Stack(
         children: [
           const LogInViewBody(),

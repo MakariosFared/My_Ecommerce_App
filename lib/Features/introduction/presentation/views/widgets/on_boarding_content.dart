@@ -98,7 +98,7 @@ class ContentContainer extends StatelessWidget {
           Text(
             textAlign: TextAlign.center,
             title,
-            style: Styles.textStyle24.copyWith(color: Colors.black),
+            style: Styles.textStyleBold24.copyWith(color: Colors.black),
           ),
           const SizedBox(
             height: 15,
@@ -106,7 +106,7 @@ class ContentContainer extends StatelessWidget {
           Text(
             textAlign: TextAlign.center,
             description ?? '',
-            style: Styles.textStyle16.copyWith(color: Colors.black),
+            style: Styles.textStyleMedium16.copyWith(color: Colors.black),
           ),
           const SizedBox(
             height: 24,

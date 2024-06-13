@@ -33,11 +33,11 @@ flutter:
     - assets/images/
   # example:
   # fonts:
-  #   - family: Poppins
-  #     fonts:
-  #       - asset: fonts/Poppins-Medium.ttf
-  #       - asset: fonts/Poppins-Bold.ttf
-  #         weight: 700
+    # - family: Poppins
+      # fonts:
+        # - asset: fonts/Poppins-Medium.ttf
+        # - asset: fonts/Poppins-Bold.ttf
+          # weight: 700
     # - family: Trajan Pro
     #   fonts:
     #     - asset: fonts/TrajanPro.ttf
