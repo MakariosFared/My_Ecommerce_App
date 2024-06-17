@@ -2,8 +2,8 @@ import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
-class CustomSignUpButton extends StatelessWidget {
-  const CustomSignUpButton({
+class CustomLogINButton extends StatelessWidget {
+  const CustomLogINButton({
     super.key,
     this.borderRadius,
     // required this.onPressed,
@@ -17,21 +17,17 @@ class CustomSignUpButton extends StatelessWidget {
       height: 56,
       width: 366,
       child: TextButton(
-        onPressed: (){},
+        onPressed: () {},
         style: TextButton.styleFrom(
-          backgroundColor: Colors.white,
+          backgroundColor: kGreenColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
-            side: const BorderSide(
-              color: kGreenColor,
-              width: 2,
-            ),
           ),
         ),
         child: Text(
-          'Sign Up For Free',
-          style: Styles.textStyleSemiBold16.copyWith(
-            color: kGreenColor,
+          'Log In',
+          style: Styles.textStyleBold18.copyWith(
+            color: Colors.white,
           ),
         ),
       ),

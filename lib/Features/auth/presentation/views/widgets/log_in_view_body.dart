@@ -1,14 +1,24 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_button.dart';
 import 'package:dikkan/Core/utils/widgets/custom_email_text_field.dart';
+import 'package:dikkan/Core/utils/widgets/custom_log_in_button.dart';
 import 'package:dikkan/Core/utils/widgets/custom_password_text_field.dart';
 import 'package:dikkan/Core/utils/widgets/custom_sign_up_button.dart';
 import 'package:dikkan/Features/auth/presentation/views/widgets/auth_header.dart';
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
-class LogInViewBody extends StatelessWidget {
-  LogInViewBody({super.key, this.email, this.password});
+class LogInViewBody extends StatefulWidget {
+  LogInViewBody({
+    super.key,
+  });
 
+  @override
+  State<LogInViewBody> createState() => _LogInViewBodyState();
+}
+
+class _LogInViewBodyState extends State<LogInViewBody> {
+  bool value = false;
   String? email, password;
   @override
   Widget build(BuildContext context) {
@@ -63,8 +73,13 @@ class LogInViewBody extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      value: false,
-                      onChanged: (value) {},
+                      value: value,
+                      onChanged: (value) {
+                        setState(() {
+                          this.value = value!;
+                        });
+                      },
+                      activeColor: kGreenColor,
                     ),
                     const Text(
                       'Stay Logged In',
@@ -83,14 +98,7 @@ class LogInViewBody extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              SizedBox(
-                width: 366,
-                height: 50,
-                child: CustomButton(
-                  text: 'Log In',
-                  onPressed: () {},
-                ),
-              ),
+              const CustomLogINButton(),
               const SizedBox(
                 height: 24,
               ),
@@ -101,7 +109,7 @@ class LogInViewBody extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              CustomSignUpButton(text: 'Sign Up For Free', onPressed: () {})
+              const CustomSignUpButton()
             ],
           ),
         ],
