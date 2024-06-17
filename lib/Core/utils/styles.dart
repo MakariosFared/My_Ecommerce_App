@@ -17,6 +17,11 @@ abstract class Styles {
     fontFamily: kPoppins,
     fontWeight: FontWeight.w500,
   );
+  static const textStyleMedium12 = TextStyle(
+    fontSize: 12,
+    fontFamily: kPoppins,
+    fontWeight: FontWeight.w500,
+  );
   static const textStyleBold18 = TextStyle(
     fontSize: 18,
     fontFamily: kPoppins,
@@ -24,6 +29,17 @@ abstract class Styles {
   );
   static const textStyleSemiBold16 = TextStyle(
     fontSize: 16,
+    fontFamily: kPoppins,
+    fontWeight: FontWeight.w600,
+  );
+  static const textStyleBold16 = TextStyle(
+    fontSize: 16,
+    fontFamily: kPoppins,
+    fontWeight: FontWeight.w700,
+  );
+  
+  static const textStyleSemiBold12 = TextStyle(
+    fontSize: 12,
     fontFamily: kPoppins,
     fontWeight: FontWeight.w600,
   );

@@ -12,7 +12,7 @@ class LogInView extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       body: Stack(
         children: [
-          const LogInViewBody(),
+           LogInViewBody(),
           Positioned(
             top: 0,
             left: 0,

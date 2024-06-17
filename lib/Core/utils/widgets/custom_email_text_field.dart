@@ -1,26 +1,23 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.hint});
+class CustomEmailTextField extends StatelessWidget {
+   CustomEmailTextField({super.key, required this.hint});
   final String hint;
+    Function(String)? onChanged;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: TextField(
+      child: TextFormField(
+        onChanged: onChanged,
+        validator: (data) {
+        if (data!.isEmpty) {
+          return 'Field is required';
+        }
+      },
         decoration: InputDecoration(
-          suffixIcon: hint == 'Password'
-              ? IconButton(
-                  color: const Color(0xffB9B9B9),
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.visibility_off,
-                    color: Color(0xff313131),
-                    size: 24,
-                  ),
-                )
-              : null,
           hintText: hint,
           hintStyle: Styles.textStyleSemiBold16.copyWith(
             color: const Color(0xffB9B9B9),

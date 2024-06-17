@@ -1,41 +1,107 @@
 import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Core/utils/widgets/custom_text_field.dart';
+import 'package:dikkan/Core/utils/widgets/custom_button.dart';
+import 'package:dikkan/Core/utils/widgets/custom_email_text_field.dart';
+import 'package:dikkan/Core/utils/widgets/custom_password_text_field.dart';
+import 'package:dikkan/Core/utils/widgets/custom_sign_up_button.dart';
 import 'package:dikkan/Features/auth/presentation/views/widgets/auth_header.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LogInViewBody extends StatelessWidget {
-  const LogInViewBody({super.key});
+  LogInViewBody({super.key, this.email, this.password});
 
+  String? email, password;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: const [
+        children: [
           Column(
             children: [
-              AuthHeader(),
-              SizedBox(
+              const AuthHeader(),
+              const SizedBox(
                 height: 40,
               ),
-              Text(
+              const Text(
                 'Welcome Back!',
                 style: Styles.textStyleBold24,
               ),
-              Text(
+              const Text(
                 'Let\'s start your culinary adventure',
                 style: Styles.textStyleBold20,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 26,
               ),
-              CustomTextField(hint: 'Enter your email or username'),
-              SizedBox(
+              CustomEmailTextField(hint: 'Enter your email or username'),
+              const SizedBox(
                 height: 16,
               ),
-              CustomTextField(hint: 'Password'),
+              CustomPasswordTextField(
+                hint: 'Password',
+                obscureText: false,
+                onChanged: (data) {
+                  password = data;
+                },
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Row(
+                  children: [
+                    Checkbox(
+                      visualDensity: const VisualDensity(
+                        horizontal: -4,
+                        vertical: 0,
+                      ),
+                      side: const BorderSide(
+                        color: Color(0xff707070),
+                        width: 1.5,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      value: false,
+                      onChanged: (value) {},
+                    ),
+                    const Text(
+                      'Stay Logged In',
+                      style: Styles.textStyleMedium12,
+                    ),
+                    const Spacer(),
+                    Text(
+                      'Forgot Password?',
+                      style: Styles.textStyleSemiBold12.copyWith(
+                        color: const Color(0xff25418B),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              SizedBox(
+                width: 366,
+                height: 50,
+                child: CustomButton(
+                  text: 'Log In',
+                  onPressed: () {},
+                ),
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              const Text(
+                'You New Here?',
+                style: Styles.textStyleBold16,
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              CustomSignUpButton(text: 'Sign Up For Free', onPressed: () {})
             ],
           ),
         ],
