@@ -1,3 +1,4 @@
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,9 @@ class CustomSignUpButton extends StatelessWidget {
       height: 56,
       width: 366,
       child: TextButton(
-        onPressed: (){},
+        onPressed: (){
+          
+        },
         style: TextButton.styleFrom(
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(

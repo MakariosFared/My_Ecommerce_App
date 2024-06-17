@@ -1,5 +1,5 @@
-
 import 'package:dikkan/Features/auth/presentation/views/log_in_view.dart';
+import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
 import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -23,6 +23,10 @@ abstract class AppRouter {
       GoRoute(
         path: kLogIn,
         builder: (context, state) => const LogInView(),
+      ),
+      GoRoute(
+        path: kSignIn,
+        builder: (context, state) => const SignUpView(),
       ),
     ],
   );

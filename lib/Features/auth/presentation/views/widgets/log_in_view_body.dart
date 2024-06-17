@@ -1,5 +1,4 @@
 import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Core/utils/widgets/custom_button.dart';
 import 'package:dikkan/Core/utils/widgets/custom_email_text_field.dart';
 import 'package:dikkan/Core/utils/widgets/custom_log_in_button.dart';
 import 'package:dikkan/Core/utils/widgets/custom_password_text_field.dart';
@@ -9,7 +8,7 @@ import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
 class LogInViewBody extends StatefulWidget {
-  LogInViewBody({
+  const LogInViewBody({
     super.key,
   });
 
