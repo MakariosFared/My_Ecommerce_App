@@ -26,12 +26,15 @@ class OnBoardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(
-          height: 54,
-          width: 84,
-          child: Image.asset(AssetsData.logo),
+        Align(
+          alignment: Alignment.topRight,
+          child: SizedBox(
+            height: 54,
+            width: 84,
+            child: Image.asset(AssetsData.logo),
+          ),
         ),
         const SizedBox(
           height: 44,
@@ -61,62 +64,3 @@ class OnBoardContent extends StatelessWidget {
   }
 }
 
-class ContentContainer extends StatelessWidget {
-  const ContentContainer({
-    super.key,
-    required this.selectedIndex,
-    required this.onTap,
-    required this.title,
-    required this.description,
-    required this.buttonText,
-    required this.onPressed,
-  });
-
-  final int selectedIndex;
-  final void Function()? onTap;
-  final String title;
-  final String? description;
-  final String buttonText;
-  final void Function()? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 365,
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-      ),
-      child: Column(
-        children: [
-          ListCustomDots(selectedIndex: selectedIndex, onTap: onTap),
-          const SizedBox(
-            height: 28,
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            title,
-            style: Styles.textStyleBold24.copyWith(color: Colors.black),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            description ?? '',
-            style: Styles.textStyleMedium16.copyWith(color: Colors.black),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          CustomButton(
-            text: buttonText,
-            onPressed: onPressed,
-          ),
-        ],
-      ),
-    );
-  }
-}
