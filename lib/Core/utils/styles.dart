@@ -2,6 +2,11 @@ import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
+  static const textStyleBold26 = TextStyle(
+    fontSize: 26,
+    fontFamily: kPoppins,
+    fontWeight: FontWeight.w700,
+  );
   static const textStyleBold24 = TextStyle(
     fontSize: 24,
     fontFamily: kPoppins,
@@ -37,10 +42,15 @@ abstract class Styles {
     fontFamily: kPoppins,
     fontWeight: FontWeight.w700,
   );
-  
+
   static const textStyleSemiBold12 = TextStyle(
     fontSize: 12,
     fontFamily: kPoppins,
     fontWeight: FontWeight.w600,
+  );
+  static const textStyleRegular15 = TextStyle(
+    fontSize: 15,
+    fontFamily: kPoppins,
+    fontWeight: FontWeight.w400,
   );
 }

@@ -41,19 +41,25 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               ),
               const CustomTextField(
                 hint: 'Enter your Full Name',
+                padding: EdgeInsets.symmetric(horizontal: 24),
               ),
               const SizedBox(
                 height: 9,
               ),
-              const CustomTextField(hint: 'Phone Number'),
+              const CustomTextField(
+                hint: 'Phone Number',
+                padding: EdgeInsets.symmetric(horizontal: 24),
+              ),
               const SizedBox(
                 height: 9,
               ),
               CustomTextField(
                 hint: 'Your Address',
                 suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Image.asset("assets/images/distance.png"),),
+                  onPressed: () {},
+                  icon: Image.asset("assets/images/distance.png"),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
               ),
               const SizedBox(
                 height: 9,

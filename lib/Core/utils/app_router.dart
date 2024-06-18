@@ -1,3 +1,4 @@
+import 'package:dikkan/Features/auth/presentation/views/forget_password_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/log_in_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
@@ -9,6 +10,7 @@ abstract class AppRouter {
   static const String kIntroductionView = '/onBoardingView';
   static const String kLogIn = '/logIn';
   static const String kSignUn = '/signUp';
+  static const String kForgetPassword = '/forgetPassword';
 
   static final router = GoRouter(
     routes: [
@@ -27,6 +29,10 @@ abstract class AppRouter {
       GoRoute(
         path: kSignUn,
         builder: (context, state) => const SignUpView(),
+      ),
+      GoRoute(
+        path: kForgetPassword,
+        builder: (context, state) => const ForgetPasswordView(),
       ),
     ],
   );

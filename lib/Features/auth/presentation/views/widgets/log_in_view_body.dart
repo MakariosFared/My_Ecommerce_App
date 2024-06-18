@@ -1,3 +1,4 @@
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_email_text_field.dart';
 import 'package:dikkan/Core/utils/widgets/custom_log_in_button.dart';
@@ -6,6 +7,7 @@ import 'package:dikkan/Core/utils/widgets/custom_sign_up_button.dart';
 import 'package:dikkan/Features/auth/presentation/views/widgets/auth_header.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LogInViewBody extends StatefulWidget {
   const LogInViewBody({
@@ -43,10 +45,12 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                 height: 26,
               ),
               CustomTextField(
-                  hint: 'Enter your email or username',
-                  onChanged: (data) {
-                    email = data;
-                  }),
+                hint: 'Enter your email or username',
+                onChanged: (data) {
+                  email = data;
+                },
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+              ),
               const SizedBox(
                 height: 16,
               ),
@@ -90,7 +94,9 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                     ),
                     const Spacer(),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        GoRouter.of(context).push(AppRouter.kForgetPassword);
+                      },
                       child: Text(
                         'Forgot Password?',
                         style: Styles.textStyleSemiBold12.copyWith(
