@@ -39,6 +39,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
           // height: 55,
           width: double.infinity,
           child: CustomTextField(
+            keyboardType: TextInputType.phone,
             hint: 'Phone Number',
             padding: EdgeInsets.symmetric(horizontal: 13.5),
           ),
@@ -56,7 +57,6 @@ class ForgetPasswordViewBody extends StatelessWidget {
                 right: 13.5,
               ),
               child: CustomButton(
-                
                 text: 'Send SMS Code',
                 onPressed: () {},
               ),

@@ -7,18 +7,20 @@ class CustomTextField extends StatelessWidget {
       required this.hint,
       this.onChanged,
       this.suffixIcon,
-      required this.padding});
+      required this.padding, this.keyboardType});
 
   final String hint;
   final Function(String)? onChanged;
   final Widget? suffixIcon;
   final EdgeInsetsGeometry padding;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
       child: TextFormField(
+        keyboardType: keyboardType,
         onChanged: onChanged,
         validator: (data) {
           if (data!.isEmpty) {

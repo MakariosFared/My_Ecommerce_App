@@ -40,6 +40,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 height: 18,
               ),
               const CustomTextField(
+                keyboardType: TextInputType.name,
                 hint: 'Enter your Full Name',
                 padding: EdgeInsets.symmetric(horizontal: 24),
               ),
@@ -47,6 +48,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 height: 9,
               ),
               const CustomTextField(
+                keyboardType: TextInputType.phone,
                 hint: 'Phone Number',
                 padding: EdgeInsets.symmetric(horizontal: 24),
               ),
@@ -54,6 +56,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 height: 9,
               ),
               CustomTextField(
+                // keyboardType: TextInputType.streetAddress,
                 hint: 'Your Address',
                 suffixIcon: IconButton(
                   onPressed: () {},

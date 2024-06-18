@@ -19,6 +19,7 @@ class CustomButton extends StatelessWidget {
       height: 60,
       width: 300,
       child: TextButton(
+        
         onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: kGreenColor,
