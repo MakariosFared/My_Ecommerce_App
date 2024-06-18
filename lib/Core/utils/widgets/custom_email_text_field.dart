@@ -1,10 +1,12 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomEmailTextField extends StatelessWidget {
-   CustomEmailTextField({super.key, required this.hint});
+class CustomTextField extends StatelessWidget {
+  const CustomTextField(
+      {super.key, required this.hint, this.onChanged, this.suffixIcon});
   final String hint;
-    Function(String)? onChanged;
+  final Function(String)? onChanged;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +15,10 @@ class CustomEmailTextField extends StatelessWidget {
       child: TextFormField(
         onChanged: onChanged,
         validator: (data) {
-        if (data!.isEmpty) {
-          return 'Field is required';
-        }
-      },
+          if (data!.isEmpty) {
+            return 'Field is required';
+          }
+        },
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: Styles.textStyleSemiBold16.copyWith(
@@ -27,6 +29,7 @@ class CustomEmailTextField extends StatelessWidget {
           border: buildBorder(),
           enabledBorder: buildBorder(),
           focusedBorder: buildBorder(),
+          suffixIcon: suffixIcon,
         ),
       ),
     );

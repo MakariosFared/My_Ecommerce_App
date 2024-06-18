@@ -42,7 +42,11 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               const SizedBox(
                 height: 26,
               ),
-              CustomEmailTextField(hint: 'Enter your email or username'),
+              CustomTextField(
+                  hint: 'Enter your email or username',
+                  onChanged: (data) {
+                    email = data;
+                  }),
               const SizedBox(
                 height: 16,
               ),
@@ -85,10 +89,13 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       style: Styles.textStyleMedium12,
                     ),
                     const Spacer(),
-                    Text(
-                      'Forgot Password?',
-                      style: Styles.textStyleSemiBold12.copyWith(
-                        color: const Color(0xff25418B),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Forgot Password?',
+                        style: Styles.textStyleSemiBold12.copyWith(
+                          color: const Color(0xff25418B),
+                        ),
                       ),
                     ),
                   ],

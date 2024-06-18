@@ -3,7 +3,7 @@ import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
-  CustomPasswordTextField({
+   CustomPasswordTextField({
     super.key,
     required this.hint,
     this.onChanged,
@@ -18,6 +18,7 @@ class CustomPasswordTextField extends StatefulWidget {
 }
 
 class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,29 +34,26 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
         },
         decoration: InputDecoration(
           suffixIcon: IconButton(
-              color: const Color(0xffB9B9B9),
-              icon: widget.obscureText!
-                  ? const Icon(
-                      Icons.visibility,
-                      color: kGreenColor,
-                      size: 24,
-                    )
-                  : const Icon(
-                      Icons.visibility_off,
-                      color: Color(0xff313131),
-                      size: 24,
-                    ),
-              onPressed: () {
-                setState(() {
-                  widget.obscureText = !widget.obscureText!;
-                });
-              }
-              // const Icon(
-              //   Icons.visibility_off,
-              //   color: Color(0xff313131),
-              //   size: 24,
-              // ),
-              ),
+            color: const Color(0xffB9B9B9),
+            
+            icon: widget.obscureText!
+                ? const Icon(
+                    Icons.visibility,
+                    color: kGreenColor,
+                    size: 24,
+                  )
+                : const Icon(
+                    Icons.visibility_off,
+                    color: Color(0xff313131),
+                    size: 24,
+                  ),
+            onPressed: () {
+              setState(() {
+                widget.obscureText = !widget.obscureText!;
+              });
+            }
+          
+          ),
           hintText: widget.hint,
           hintStyle: Styles.textStyleSemiBold16.copyWith(
             color: const Color(0xffB9B9B9),

@@ -8,7 +8,7 @@ abstract class AppRouter {
   static const String kHomeView = '/homeView';
   static const String kIntroductionView = '/onBoardingView';
   static const String kLogIn = '/logIn';
-  static const String kSignIn = '/signIn';
+  static const String kSignUn = '/signUp';
 
   static final router = GoRouter(
     routes: [
@@ -25,7 +25,7 @@ abstract class AppRouter {
         builder: (context, state) => const LogInView(),
       ),
       GoRoute(
-        path: kSignIn,
+        path: kSignUn,
         builder: (context, state) => const SignUpView(),
       ),
     ],
