@@ -1,12 +1,9 @@
-import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_button.dart';
-import 'package:dikkan/Core/utils/widgets/custom_email_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-class ForgetPasswordViewBody extends StatelessWidget {
-  const ForgetPasswordViewBody({super.key});
+class VerificationWithOtpViewBody extends StatelessWidget {
+  const VerificationWithOtpViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +17,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
             bottom: 10,
           ),
           child: Text(
-            'Forget Password',
+            'Verification',
             style: Styles.textStyleBold26,
           ),
         ),
@@ -31,21 +28,13 @@ class ForgetPasswordViewBody extends StatelessWidget {
             bottom: 30,
           ),
           child: Text(
-            'Please enter your Email so we can help you recover your password.',
+            'Enter the OTP code from the phone we just sent you.',
             style: Styles.textStyleRegular15.copyWith(
               color: const Color(0xff8F9BB3),
             ),
           ),
         ),
-        const SizedBox(
-          // height: 55,
-          width: double.infinity,
-          child: CustomTextField(
-            keyboardType: TextInputType.phone,
-            hint: 'Phone Number',
-            padding: EdgeInsets.symmetric(horizontal: 13.5),
-          ),
-        ),
+        
         const SizedBox(
           height: 30,
         ),
@@ -59,15 +48,14 @@ class ForgetPasswordViewBody extends StatelessWidget {
                 right: 13.5,
               ),
               child: CustomButton(
-                text: 'Send SMS Code',
+                text: 'Submit',
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.kVerification);
                 },
               ),
             ),
           ),
         )
       ],
-    );
+    );;
   }
 }
