@@ -59,8 +59,10 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 // keyboardType: TextInputType.streetAddress,
                 hint: 'Your Address',
                 suffixIcon: IconButton(
+                  iconSize: 4,
                   onPressed: () {},
                   icon: Image.asset("assets/images/distance.png"),
+                  // icon: SvgPicture.asset("assets/images/distance.svg"),
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 24),
               ),
@@ -142,6 +144,9 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   )
                 ],
               ),
+              const SizedBox(
+                height: 60,
+              )
             ],
           ),
         ],

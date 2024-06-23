@@ -121,7 +121,10 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               const SizedBox(
                 height: 24,
               ),
-              const CustomSignUpButton()
+              const CustomSignUpButton(),
+              const SizedBox(
+                height: 92,
+              )
             ],
           ),
         ],

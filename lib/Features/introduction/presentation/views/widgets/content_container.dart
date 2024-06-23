@@ -23,41 +23,46 @@ class ContentContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 365,
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+    return Expanded(
+      child: Container(
+        width: 365,
+        decoration: ShapeDecoration(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
         ),
-      ),
-      child: Column(
-        children: [
-          ListCustomDots(selectedIndex: selectedIndex, onTap: onTap),
-          const SizedBox(
-            height: 28,
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            title,
-            style: Styles.textStyleBold24.copyWith(color: Colors.black),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Text(
-            textAlign: TextAlign.center,
-            description ?? '',
-            style: Styles.textStyleMedium16.copyWith(color: Colors.black),
-          ),
-          const SizedBox(
-            height: 24,
-          ),
-          CustomButton(
-            text: buttonText,
-            onPressed: onPressed,
-          ),
-        ],
+        child: Column(
+          children: [
+            ListCustomDots(
+              selectedIndex: selectedIndex,
+              onTap: onTap,
+            ),
+            const SizedBox(
+              height: 28,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              title,
+              style: Styles.textStyleBold24.copyWith(color: Colors.black),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              description ?? "",
+              style: Styles.textStyleMedium16.copyWith(color: Colors.black),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            CustomButton(
+              text: buttonText,
+              onPressed: onPressed,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,7 +1,5 @@
 import 'package:dikkan/Core/utils/assets.dart';
-import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Core/utils/widgets/custom_button.dart';
-import 'package:dikkan/Features/introduction/presentation/views/widgets/list_custom_dots.dart';
+import 'package:dikkan/Features/introduction/presentation/views/widgets/content_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -26,7 +24,7 @@ class OnBoardContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Align(
           alignment: Alignment.topRight,
@@ -39,23 +37,23 @@ class OnBoardContent extends StatelessWidget {
         const SizedBox(
           height: 44,
         ),
-        SizedBox(
-          height: 365,
-          width: 365,
-          child: SvgPicture.asset(image),
+        Flexible(
+          child: SizedBox(
+            height: 365,
+            width: 365,
+            child: SvgPicture.asset(image),
+          ),
         ),
         const SizedBox(
           height: 48,
         ),
-        Expanded(
-          child: ContentContainer(
-              selectedIndex: selectedIndex,
-              onTap: onTap,
-              title: title,
-              description: description,
-              buttonText: buttonText,
-              onPressed: onPressed),
-        ),
+        ContentContainer(
+            selectedIndex: selectedIndex,
+            onTap: onTap,
+            title: title,
+            description: description,
+            buttonText: buttonText,
+            onPressed: onPressed),
         const SizedBox(
           height: 24,
         ),
@@ -63,4 +61,3 @@ class OnBoardContent extends StatelessWidget {
     );
   }
 }
-

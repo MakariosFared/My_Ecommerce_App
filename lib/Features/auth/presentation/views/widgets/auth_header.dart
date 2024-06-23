@@ -10,7 +10,7 @@ class AuthHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 310,
+      height: MediaQuery.of(context).size.height * 0.34,
       decoration: const BoxDecoration(
         color: kGreenColor,
         borderRadius: BorderRadius.only(
@@ -18,12 +18,15 @@ class AuthHeader extends StatelessWidget {
           bottomRight: Radius.circular(25),
         ),
       ),
-      child: Image.asset(
+      child: FittedBox(
         alignment: Alignment.bottomCenter,
-        'assets/images/Group 31.png',
-        // AssetsData.logo,
-        height: 234,
-        width: 314,
+        child: Image.asset(
+          // alignment: Alignment.bottomCenter,
+          'assets/images/Group 31.png',
+          // AssetsData.logo,
+          height: MediaQuery.of(context).size.height * 0.34 * 0.59,
+          width: 314,
+        ),
       ),
     );
   }
