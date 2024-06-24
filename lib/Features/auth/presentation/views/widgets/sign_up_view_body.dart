@@ -70,12 +70,14 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 height: 9,
               ),
               CustomPasswordTextField(
+                obscureText: true,
                 hint: 'Password',
               ),
               const SizedBox(
                 height: 9,
               ),
               CustomPasswordTextField(
+                obscureText: true,
                 hint: 'Re-Password',
               ),
               const SizedBox(
