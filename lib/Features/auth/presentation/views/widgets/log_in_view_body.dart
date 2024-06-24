@@ -56,7 +56,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               ),
               CustomPasswordTextField(
                 hint: 'Password',
-                obscureText: false,
+                obscureText: true,
                 onChanged: (data) {
                   password = data;
                 },

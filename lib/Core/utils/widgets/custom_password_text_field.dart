@@ -40,13 +40,13 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
               color: const Color(0xffB9B9B9),
               icon: widget.obscureText!
                   ? const Icon(
-                      Icons.visibility,
-                      color: kGreenColor,
+                      Icons.visibility_off,
+                      color: Color(0xff313131),
                       size: 24,
                     )
                   : const Icon(
-                      Icons.visibility_off,
-                      color: Color(0xff313131),
+                      Icons.visibility,
+                      color: kGreenColor,
                       size: 24,
                     ),
               onPressed: () {

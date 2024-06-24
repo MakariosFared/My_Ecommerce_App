@@ -1,6 +1,7 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class VerificationWithOtpViewBody extends StatelessWidget {
   const VerificationWithOtpViewBody({super.key});
@@ -34,7 +35,7 @@ class VerificationWithOtpViewBody extends StatelessWidget {
             ),
           ),
         ),
-        
+        const OtpForm(),
         const SizedBox(
           height: 30,
         ),
@@ -49,13 +50,59 @@ class VerificationWithOtpViewBody extends StatelessWidget {
               ),
               child: CustomButton(
                 text: 'Submit',
-                onPressed: () {
-                },
+                onPressed: () {},
               ),
             ),
           ),
         )
       ],
-    );;
+    );
   }
+}
+
+class OtpForm extends StatelessWidget {
+  const OtpForm({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            height: 60,
+            width: 60,
+            color: Colors.white,
+            child: TextField(
+              decoration: const InputDecoration(
+                fillColor: Colors.white,
+                border: OutlineInputBorder(),
+                errorBorder: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(),
+              ),
+              style: Theme.of(context).textTheme.headlineLarge,
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.number,
+              inputFormatters: [
+                LengthLimitingTextInputFormatter(1),
+                FilteringTextInputFormatter.digitsOnly,
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+OutlineInputBorder buildBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8),
+    borderSide: const BorderSide(
+      // color: Color(0xffFAFAFA),
+      color: Colors.red,
+    ),
+  );
 }
