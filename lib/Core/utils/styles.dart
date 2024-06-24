@@ -53,4 +53,16 @@ abstract class Styles {
     fontFamily: kPoppins,
     fontWeight: FontWeight.w400,
   );
+
+  static const textStyleSfProDisplayRegular15 = TextStyle(
+    fontSize: 15,
+    fontFamily: kSfProDisplay,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const textStyleSfProDisplayRegular26 = TextStyle(
+    fontSize: 26,
+    fontFamily: kSfProDisplay,
+    fontWeight: FontWeight.w700,
+  );
 }

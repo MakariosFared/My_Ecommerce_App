@@ -1,4 +1,3 @@
-
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_button.dart';
 import 'package:dikkan/Features/auth/presentation/views/widgets/otp_form.dart';
@@ -15,23 +14,23 @@ class VerificationWithOtpViewBody extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.only(
             top: 40,
-            left: 20,
+            left: 30,
             bottom: 10,
           ),
           child: Text(
             'Verification',
-            style: Styles.textStyleBold26,
+            style: Styles.textStyleSfProDisplayRegular26,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(
-            left: 20,
+            left: 30,
             right: 20,
             bottom: 30,
           ),
           child: Text(
             'Enter the OTP code from the phone we just sent you.',
-            style: Styles.textStyleRegular15.copyWith(
+            style: Styles.textStyleSfProDisplayRegular15.copyWith(
               color: const Color(0xff8F9BB3),
             ),
           ),
@@ -40,6 +39,22 @@ class VerificationWithOtpViewBody extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
+        Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: Row(
+            children: [
+              Text(
+                'Didn’t receive OTP code! ',
+                style: Styles.textStyleSfProDisplayRegular15.copyWith(
+                  color: const Color(0xff8F9BB3),
+                ),
+              ),
+              const Text('Resend',
+                  style: Styles.textStyleSfProDisplayRegular15),
+            ],
+          ),
+        ),
+        const SizedBox(height: 10),
         Center(
           child: SizedBox(
             height: 50,
@@ -55,11 +70,8 @@ class VerificationWithOtpViewBody extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
 }
-
-
-
