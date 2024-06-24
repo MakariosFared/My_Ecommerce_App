@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class OtpTextField extends StatelessWidget {
-  const OtpTextField({
-    super.key,
+class OtpTextFormField extends StatelessWidget {
+  const OtpTextFormField({
+    super.key, this.onSaved,
   });
 
+
+final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +17,13 @@ class OtpTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         color: Colors.white,
       ),
-      child: TextField(
+      child: TextFormField(
+        onSaved: onSaved,
+        onChanged: (value) {
+          if (value.length == 1) { 
+            FocusScope.of(context).nextFocus();
+          }
+        },
         decoration: InputDecoration(
           fillColor: Colors.white,
           border: InputBorder.none,

@@ -26,6 +26,7 @@ class CustomTextField extends StatelessWidget {
           if (data!.isEmpty) {
             return 'Field is required';
           }
+          return null;
         },
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
