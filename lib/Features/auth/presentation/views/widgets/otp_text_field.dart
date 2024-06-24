@@ -1,13 +1,14 @@
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class OtpTextFormField extends StatelessWidget {
   const OtpTextFormField({
-    super.key, this.onSaved,
+    super.key,
+    this.onSaved,
   });
 
-
-final void Function(String?)? onSaved;
+  final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,9 +19,13 @@ final void Function(String?)? onSaved;
         color: Colors.white,
       ),
       child: TextFormField(
+        cursorHeight: 32,
+        cursorColor: kGreenColor,
+        obscureText: true,
+        obscuringCharacter: '*',
         onSaved: onSaved,
         onChanged: (value) {
-          if (value.length == 1) { 
+          if (value.length == 1) {
             FocusScope.of(context).nextFocus();
           }
         },

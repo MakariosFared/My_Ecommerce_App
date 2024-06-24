@@ -60,7 +60,7 @@ abstract class Styles {
     fontWeight: FontWeight.w400,
   );
 
-  static const textStyleSfProDisplayRegular26 = TextStyle(
+  static const textStyleSfProDisplayBold26 = TextStyle(
     fontSize: 26,
     fontFamily: kSfProDisplay,
     fontWeight: FontWeight.w700,

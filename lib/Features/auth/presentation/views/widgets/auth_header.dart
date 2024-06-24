@@ -18,15 +18,12 @@ class AuthHeader extends StatelessWidget {
           bottomRight: Radius.circular(25),
         ),
       ),
-      child: FittedBox(
+      child: Image.asset(
         alignment: Alignment.bottomCenter,
-        child: Image.asset(
-          // alignment: Alignment.bottomCenter,
-          'assets/images/Group 31.png',
-          // AssetsData.logo,
-          height: MediaQuery.of(context).size.height * 0.34 * 0.59,
-          width: 314,
-        ),
+        'assets/images/Group 31.png',
+        // AssetsData.logo,
+        height: MediaQuery.of(context).size.height * 0.34 * 0.59,
+        width: 314,
       ),
     );
   }

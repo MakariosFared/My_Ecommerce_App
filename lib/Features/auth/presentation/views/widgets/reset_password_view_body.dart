@@ -1,12 +1,10 @@
-import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_button.dart';
-import 'package:dikkan/Features/auth/presentation/views/widgets/otp_form.dart';
+import 'package:dikkan/Core/utils/widgets/custom_password_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-class VerificationWithOtpViewBody extends StatelessWidget {
-  const VerificationWithOtpViewBody({super.key});
+class ResetPasswordViewBody extends StatelessWidget {
+  const ResetPasswordViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,46 +15,48 @@ class VerificationWithOtpViewBody extends StatelessWidget {
           padding: EdgeInsets.only(
             top: 40,
             left: 30,
-            bottom: 10,
+            bottom: 12,
           ),
           child: Text(
-            'Verification',
+            'Reset Password',
             style: Styles.textStyleSfProDisplayBold26,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(
             left: 30,
-            right: 20,
-            bottom: 30,
+            right: 30,
+            bottom: 23,
           ),
           child: Text(
-            'Enter the OTP code from the phone we just sent you.',
+            'Enter your new password and confirm.',
             style: Styles.textStyleSfProDisplayRegular15.copyWith(
               color: const Color(0xff8F9BB3),
             ),
           ),
         ),
-        const OtpForm(),
+        SizedBox(
+          // height: 55,
+          width: double.infinity,
+          child: CustomPasswordTextField(
+            obscureText: true,
+            hint: 'Password',
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        SizedBox(
+          // height: 55,
+          width: double.infinity,
+          child: CustomPasswordTextField(
+            obscureText: true,
+            hint: 'Re-Password',
+          ),
+        ),
         const SizedBox(
           height: 30,
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 30),
-          child: Row(
-            children: [
-              Text(
-                'Didn’t receive OTP code! ',
-                style: Styles.textStyleSfProDisplayRegular15.copyWith(
-                  color: const Color(0xff8F9BB3),
-                ),
-              ),
-              const Text('Resend',
-                  style: Styles.textStyleSfProDisplayRegular15),
-            ],
-          ),
-        ),
-        const SizedBox(height: 10),
         Center(
           child: SizedBox(
             height: 50,
@@ -67,14 +67,14 @@ class VerificationWithOtpViewBody extends StatelessWidget {
                 right: 13.5,
               ),
               child: CustomButton(
-                text: 'Submit',
+                text: 'Done',
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.kResetPassword);
+                  // GoRouter.of(context).push(AppRouter.kVerification);
                 },
               ),
             ),
           ),
-        ),
+        )
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:dikkan/Features/auth/presentation/views/forget_password_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/log_in_view.dart';
+import 'package:dikkan/Features/auth/presentation/views/reset_password_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/verification_otp_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
@@ -13,6 +14,7 @@ abstract class AppRouter {
   static const String kSignUn = '/signUp';
   static const String kForgetPassword = '/forgetPassword';
   static const String kVerification = '/verificationWithOTP';
+  static const String kResetPassword = '/resetPassword';
 
   static final router = GoRouter(
     routes: [
@@ -36,9 +38,13 @@ abstract class AppRouter {
         path: kForgetPassword,
         builder: (context, state) => const ForgetPasswordView(),
       ),
-        GoRoute(
+      GoRoute(
         path: kVerification,
         builder: (context, state) => const VerificationWithOTPView(),
+      ),
+      GoRoute(
+        path: kResetPassword,
+        builder: (context, state) => const ResetPasswordView(),
       ),
     ],
   );

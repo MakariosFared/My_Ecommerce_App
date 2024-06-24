@@ -16,18 +16,18 @@ class ForgetPasswordViewBody extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.only(
             top: 40,
-            left: 20,
+            left: 30,
             bottom: 10,
           ),
           child: Text(
             'Forget Password',
-            style: Styles.textStyleBold26,
+            style: Styles.textStyleSfProDisplayBold26,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
+            left: 30,
+            right: 30,
             bottom: 30,
           ),
           child: Text(
