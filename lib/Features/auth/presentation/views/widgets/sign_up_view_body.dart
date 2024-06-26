@@ -6,6 +6,7 @@ import 'package:dikkan/Core/utils/widgets/custom_password_text_field.dart';
 import 'package:dikkan/Features/auth/presentation/views/widgets/auth_header.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class SignUpViewBody extends StatefulWidget {
@@ -61,8 +62,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 suffixIcon: IconButton(
                   iconSize: 4,
                   onPressed: () {},
-                  icon: Image.asset("assets/images/distance.png"),
-                  // icon: SvgPicture.asset("assets/images/distance.svg"),
+                  // icon: Image.asset("assets/images/distance.png"),
+                  icon: SvgPicture.asset("assets/images/distance_svg.svg"),
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 24),
               ),
