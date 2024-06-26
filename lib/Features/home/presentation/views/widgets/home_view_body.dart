@@ -1,4 +1,5 @@
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_header.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -10,6 +11,10 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomHeader(),
+          SizedBox(
+            height: 20,
+          ),
+          CustomSearchTextField(),
         ],
       ),
     );
