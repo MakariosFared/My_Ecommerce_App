@@ -7,9 +7,11 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
-      child: CustomHeader(),
+      child: Column(
+        children: [
+          CustomHeader(),
+        ],
+      ),
     );
   }
 }
-
-
