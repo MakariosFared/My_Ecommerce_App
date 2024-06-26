@@ -1,3 +1,4 @@
+import 'package:dikkan/Features/home/presentation/views/widgets/custom_header.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -5,6 +6,10 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const SafeArea(
+      child: CustomHeader(),
+    );
   }
 }
+
+

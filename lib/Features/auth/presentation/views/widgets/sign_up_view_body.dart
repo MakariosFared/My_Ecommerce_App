@@ -63,7 +63,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   iconSize: 4,
                   onPressed: () {},
                   // icon: Image.asset("assets/images/distance.png"),
-                  icon: SvgPicture.asset("assets/images/distance_svg.svg"),
+                  icon: SvgPicture.asset(kLocationIcon),
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 24),
               ),

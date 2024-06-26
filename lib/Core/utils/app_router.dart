@@ -3,6 +3,7 @@ import 'package:dikkan/Features/auth/presentation/views/log_in_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/reset_password_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/verification_otp_view.dart';
+import 'package:dikkan/Features/home/presentation/views/home_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
 import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -45,6 +46,10 @@ abstract class AppRouter {
       GoRoute(
         path: kResetPassword,
         builder: (context, state) => const ResetPasswordView(),
+      ),
+      GoRoute(
+        path: kHomeView,
+        builder: (context, state) => const HomeView(),
       ),
     ],
   );

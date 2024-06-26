@@ -42,6 +42,11 @@ abstract class Styles {
     fontFamily: kPoppins,
     fontWeight: FontWeight.w700,
   );
+  static const textStyleBold14 = TextStyle(
+    fontSize: 14,
+    fontFamily: kPoppins,
+    fontWeight: FontWeight.w700,
+  );
 
   static const textStyleSemiBold12 = TextStyle(
     fontSize: 12,

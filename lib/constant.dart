@@ -7,3 +7,5 @@ const kPoppins = 'Poppins';
 const kGreenColor = Color(0xff17AF98);
 
 const kSfProDisplay = 'SF Pro Display';
+
+const kLocationIcon = 'assets/images/distance_svg.svg';
