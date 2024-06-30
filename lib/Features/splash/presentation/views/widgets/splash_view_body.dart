@@ -23,6 +23,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   //   navigateToHome();
   // }
 
+  @override
   void initState() {
   super.initState();
 
