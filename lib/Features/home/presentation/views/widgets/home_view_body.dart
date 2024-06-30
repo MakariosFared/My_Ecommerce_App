@@ -1,5 +1,6 @@
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_header.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/special_offer_section.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -15,11 +16,9 @@ class HomeViewBody extends StatelessWidget {
             height: 20,
           ),
           CustomSearchTextField(),
+          SpecialOfferSection(),
         ],
       ),
     );
   }
 }
-
-
-
