@@ -1,3 +1,4 @@
+import 'package:dikkan/Features/home/presentation/views/widgets/category_section.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_header.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/special_offer_section.dart';
@@ -17,6 +18,10 @@ class HomeViewBody extends StatelessWidget {
           ),
           CustomSearchTextField(),
           SpecialOfferSection(),
+          SizedBox(
+            height: 24,
+          ),
+          CategorySection(),
         ],
       ),
     );
