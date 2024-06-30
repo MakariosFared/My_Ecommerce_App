@@ -6,13 +6,18 @@ class SpecialOfferSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Padding(
-          padding: EdgeInsets.only(left: 22, top: 12),
-          child: SpecialOfferCard(),
-        ),
-      ],
+    return SizedBox(
+      height: 225,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.only(left: 22, top: 12),
+            child: SpecialOfferCard(),
+          );
+        },
+      ),
     );
   }
 }

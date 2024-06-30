@@ -1,7 +1,6 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SpecialOfferCard extends StatelessWidget {
@@ -34,11 +33,13 @@ class SpecialOfferCard extends StatelessWidget {
                     'Limited-Time Offers Await You!',
                     style: Styles.textStyleBold20,
                     overflow: TextOverflow.clip,
+                    maxLines: 2,
                   ),
                   SizedBox(height: 12),
                   Text(
                     'Grab these exclusive discounts before they\'re gone!',
                     overflow: TextOverflow.clip,
+                    maxLines: 3,
                   ),
                   SizedBox(height: 7),
                   Row(
