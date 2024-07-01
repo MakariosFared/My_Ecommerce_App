@@ -7,28 +7,24 @@ class CategoryListView extends StatelessWidget {
 
   final List<CategoryModel> categories = const [
     CategoryModel(
-      image: 'assets/images/vegetables.png',
-      categoryName: "vegetables",
+      image: 'assets/images/cleaning.png',
+      categoryName: "Cleaning",
     ),
     CategoryModel(
       image: 'assets/images/vegetables.png',
       categoryName: "vegetables",
     ),
     CategoryModel(
-      image: 'assets/images/vegetables.png',
-      categoryName: "vegetables",
+      image: 'assets/images/cleaning.png',
+      categoryName: "Phones",
+    ),
+    CategoryModel(
+      image: 'assets/images/Flash Glass.png',
+      categoryName: "Flash Glass",
     ),
     CategoryModel(
       image: 'assets/images/vegetables.png',
-      categoryName: "vegetables",
-    ),
-    CategoryModel(
-      image: 'assets/images/vegetables.png',
-      categoryName: "vegetables",
-    ),
-    CategoryModel(
-      image: 'assets/images/vegetables.png',
-      categoryName: "vegetables",
+      categoryName: "Electrons",
     ),
   ];
 
@@ -37,7 +33,7 @@ class CategoryListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 13),
       child: SizedBox(
-        height: 200,
+        height: 110,
         child: ListView.builder(
           itemCount: categories.length,
           scrollDirection: Axis.horizontal,
