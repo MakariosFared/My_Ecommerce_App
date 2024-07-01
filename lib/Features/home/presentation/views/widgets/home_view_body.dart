@@ -45,6 +45,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ),
           ),
           SliverToBoxAdapter(child: GrideListView()),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 40,
+            ),
+          ),
         ],
       ),
     );
