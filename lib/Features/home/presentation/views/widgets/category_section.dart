@@ -1,8 +1,9 @@
 import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/category_list_view.dart';
 import 'package:flutter/material.dart';
 
 class CategorySection extends StatelessWidget {
-  const CategorySection({super.key});
+  const CategorySection({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -31,41 +32,7 @@ class CategorySection extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        CategoryCard(),
-      ],
-    );
-  }
-}
-
-class CategoryCard extends StatelessWidget {
-  const CategoryCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 100,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: Image.asset(
-                'assets/images/vegetables.png',
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        const Text(
-          'Cleaning',
-          style: Styles.textStyleSemiBold12,
-        )
+        CategoryListView(),
       ],
     );
   }
