@@ -1,6 +1,7 @@
 import 'package:dikkan/Features/home/presentation/views/widgets/category_section.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_header.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/gride_list_view.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/popular_section.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/special_offer_section.dart';
 import 'package:flutter/material.dart';
@@ -16,22 +17,34 @@ class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
-      child: Column(
-        children: [
-          CustomHeader(),
-          SizedBox(
-            height: 20,
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: CustomHeader()),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20,
+            ),
           ),
-          CustomSearchTextField(),
-          SpecialOfferSection(),
-          SizedBox(
-            height: 24,
+          SliverToBoxAdapter(child: CustomSearchTextField()),
+          SliverToBoxAdapter(child: SpecialOfferSection()),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 24,
+            ),
           ),
-          CategorySection(),
-          SizedBox(
-            height: 14,
+          SliverToBoxAdapter(child: CategorySection()),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 14,
+            ),
           ),
-          PopularSection(),
+          SliverToBoxAdapter(child: PopularSection()),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 38.5,
+            ),
+          ),
+          SliverToBoxAdapter(child: GrideListView()),
         ],
       ),
     );

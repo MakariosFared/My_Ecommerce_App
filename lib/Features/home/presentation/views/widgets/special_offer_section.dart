@@ -7,7 +7,7 @@ class SpecialOfferSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 225,
+      height: MediaQuery.of(context).size.height * 0.26,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 3,
