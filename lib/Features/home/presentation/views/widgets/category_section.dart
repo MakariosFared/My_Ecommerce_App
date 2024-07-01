@@ -1,15 +1,14 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CategorySection extends StatelessWidget {
   const CategorySection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 13),
           child: Row(
             children: [
@@ -29,20 +28,44 @@ class CategorySection extends StatelessWidget {
             ],
           ),
         ),
-        
         SizedBox(
-          height: 83,
+          height: 16,
+        ),
+        CategoryCard(),
+      ],
+    );
+  }
+}
+
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 100,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: AspectRatio(
               aspectRatio: 1,
-              child: SvgPicture.asset(
-                'assets/images/cleaning.svg',
+              child: Image.asset(
+                'assets/images/vegetables.png',
                 fit: BoxFit.fill,
               ),
             ),
           ),
         ),
+        const SizedBox(
+          height: 8,
+        ),
+        const Text(
+          'Cleaning',
+          style: Styles.textStyleSemiBold12,
+        )
       ],
     );
   }
