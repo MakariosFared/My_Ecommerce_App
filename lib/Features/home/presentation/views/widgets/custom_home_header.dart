@@ -1,6 +1,4 @@
-import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/current_spot.dart';
-import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

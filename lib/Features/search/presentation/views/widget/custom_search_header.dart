@@ -1,0 +1,44 @@
+import 'package:dikkan/Core/utils/widgets/current_spot.dart';
+import 'package:flutter/material.dart';
+
+class CustomSearchHeader extends StatelessWidget {
+  const CustomSearchHeader({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(Icons.arrow_back),
+            ),
+          ),
+          const SizedBox(width: 13),
+          const CurrentSpot(),
+          const Spacer(),
+          const SizedBox(width: 5),
+          Flexible(
+            flex: 5,
+            child: Image.asset(
+              'assets/images/logo.png',
+              width: 84,
+              height: 54,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

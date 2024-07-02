@@ -1,4 +1,4 @@
-import 'package:dikkan/Features/home/presentation/views/widgets/custom_home_header.dart';
+import 'package:dikkan/Features/search/presentation/views/widget/custom_search_header.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -8,7 +8,9 @@ class SearchViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
         child: Column(
-      children: [CustomHomeHeader()],
+      children: [
+        CustomSearchHeader(),
+      ],
     ));
   }
 }
