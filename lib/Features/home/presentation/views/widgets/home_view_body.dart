@@ -1,5 +1,5 @@
 import 'package:dikkan/Features/home/presentation/views/widgets/category_section.dart';
-import 'package:dikkan/Features/home/presentation/views/widgets/custom_header.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/custom_home_header.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/gride_list_view.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/popular_section.dart';
@@ -19,7 +19,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return const SafeArea(
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: CustomHeader()),
+          SliverToBoxAdapter(child: CustomHomeHeader()),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 20,
@@ -27,10 +27,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ),
           SliverToBoxAdapter(child: CustomSearchTextField()),
           SliverToBoxAdapter(
-              child: Padding(
-            padding: EdgeInsets.only(left: 22),
-            child: SpecialOfferSection(),
-          ),),
+            child: Padding(
+              padding: EdgeInsets.only(left: 22),
+              child: SpecialOfferSection(),
+            ),
+          ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 24,

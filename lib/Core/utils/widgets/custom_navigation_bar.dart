@@ -1,4 +1,4 @@
-import 'package:dikkan/Core/utils/custom_icon.dart';
+import 'package:dikkan/Core/utils/widgets/custom_icon.dart';
 import 'package:flutter/material.dart';
 
 class CustomNavigationBar extends StatelessWidget {
