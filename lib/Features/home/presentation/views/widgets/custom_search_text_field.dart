@@ -9,7 +9,7 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: TextField(
+      child: TextField(onTap: (){} ,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 30,
