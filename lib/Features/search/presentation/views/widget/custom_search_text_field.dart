@@ -1,7 +1,6 @@
 import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomSearchTextField extends StatelessWidget {
@@ -33,7 +32,7 @@ class CustomSearchTextField extends StatelessWidget {
           suffixIcon: const Padding(
             padding: EdgeInsets.only(right: 30),
             child: Icon(
-              FontAwesomeIcons.magnifyingGlass,
+              Icons.search,
               color: Color(0xffB9B9B9),
               // size: 22,
             ),
