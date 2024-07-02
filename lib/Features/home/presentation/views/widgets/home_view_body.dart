@@ -26,7 +26,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ),
           ),
           SliverToBoxAdapter(child: CustomSearchTextField()),
-          SliverToBoxAdapter(child: SpecialOfferSection()),
+          SliverToBoxAdapter(
+              child: Padding(
+            padding: EdgeInsets.only(left: 22),
+            child: SpecialOfferSection(),
+          ),),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 24,

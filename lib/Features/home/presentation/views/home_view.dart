@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
         elevation: 0,
         shape: const CircleBorder(),
         child: const Icon(
-          FontAwesomeIcons.magnifyingGlass,
+          FontAwesomeIcons.bagShopping,
           color: Colors.white,
         ),
       ),

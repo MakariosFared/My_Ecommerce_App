@@ -36,7 +36,7 @@ class _IntroductionViewBodyState extends State<IntroductionViewBody> {
           Expanded(
             child: PageView.builder(
               controller: _pageController,
-              // physics: const NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               onPageChanged: (index) {
                 setState(() {
                   selectedIndex = index;

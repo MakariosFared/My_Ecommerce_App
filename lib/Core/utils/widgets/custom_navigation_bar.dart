@@ -1,5 +1,6 @@
+import 'package:dikkan/Core/utils/custom_icon.dart';
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomNavigationBar extends StatelessWidget {
   const CustomNavigationBar({super.key});
@@ -7,53 +8,70 @@ class CustomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      elevation: 0,
+      shadowColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       color: Colors.white,
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
         children: [
-          MaterialButton(
-            onPressed: () {},
-            minWidth: 40,
-            
+          GestureDetector(
+            onTap: () {},
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(FontAwesomeIcons.house),
-                Text('Home'),
+                Icon(
+                  MyFlutterApp.home_icon,
+                  color: Color(0xffD9D9D9),
+                ),
+                Text(
+                  'Home',
+                  style: TextStyle(color: Color(0xffD9D9D9)),
+                ),
               ],
             ),
           ),
-          MaterialButton(
-            onPressed: () {},
-            minWidth: 40,
+          GestureDetector(
+            onTap: () {},
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(FontAwesomeIcons.bookmark),
-                Text('Save'),
+                Icon(
+                  MyFlutterApp.orders_icon,
+                  color: Color(0xffD9D9D9),
+                ),
+                Text('Orders', style: TextStyle(color: Color(0xffD9D9D9))),
               ],
             ),
           ),
-          MaterialButton(
-            onPressed: () {},
-            minWidth: 40,
+          GestureDetector(
+            onTap: () {},
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.dining_sharp),
-                Text('Food'),
+                Icon(
+                  MyFlutterApp.search_icon,
+                  color: Color(0xffD9D9D9),
+                ),
+                Text('Search', style: TextStyle(color: Color(0xffD9D9D9))),
               ],
             ),
           ),
-          MaterialButton(
-            onPressed: () {},
-            minWidth: 40,
+          GestureDetector(
+            onTap: () {},
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.account_circle_outlined),
-                Text('Account'),
+                Icon(
+                  MyFlutterApp.account_icon,
+                  color: Color(0xffD9D9D9),
+                ),
+                Text(
+                  'Account',
+                  style: TextStyle(color: Color(0xffD9D9D9)),
+                ),
               ],
             ),
           ),

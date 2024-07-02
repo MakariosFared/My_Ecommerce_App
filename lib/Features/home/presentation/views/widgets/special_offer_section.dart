@@ -7,13 +7,14 @@ class SpecialOfferSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.26,
+      height: MediaQuery.of(context).size.height * 0.28,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.zero,
         itemCount: 3,
         itemBuilder: (context, index) {
           return const Padding(
-            padding: EdgeInsets.only(left: 22, top: 12),
+            padding: EdgeInsets.only(top: 12, right: 16),
             child: SpecialOfferCard(),
           );
         },
