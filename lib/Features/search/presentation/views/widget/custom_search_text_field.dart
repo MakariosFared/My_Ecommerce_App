@@ -1,7 +1,6 @@
-import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   const CustomSearchTextField({super.key});
@@ -9,16 +8,12 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
+      padding: const EdgeInsets.only(right: 14),
       child: TextField(
-        canRequestFocus: false,
-        onTap: () {
-          GoRouter.of(context).push(AppRouter.kSearch);
-        },
+        onTap: () {},
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
-            horizontal: 30,
-            vertical: 18,
+            vertical: 16,
           ),
           hintText: 'Search',
           hintStyle: Styles.textStyleMedium16.copyWith(
@@ -29,10 +24,11 @@ class CustomSearchTextField extends StatelessWidget {
           border: buildBorder(),
           enabledBorder: buildBorder(),
           focusedBorder: buildBorder(),
-          suffixIcon: const Padding(
-            padding: EdgeInsets.only(right: 30),
+          prefixIcon: const Padding(
+            padding: EdgeInsets.only(right: 14, left: 14),
             child: Icon(
-              Icons.search,
+              // Icons.search,
+              FontAwesomeIcons.magnifyingGlass,
               color: Color(0xffB9B9B9),
               // size: 22,
             ),
