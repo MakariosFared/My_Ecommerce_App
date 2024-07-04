@@ -15,7 +15,6 @@ class PopularCategoriesItem extends StatelessWidget {
           height: 119,
           width: 119,
           decoration: BoxDecoration(
-            // color: Colors.red,
             borderRadius: BorderRadius.circular(12),
             image: const DecorationImage(
               image: AssetImage('assets/images/vegetables.png'),

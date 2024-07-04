@@ -1,5 +1,5 @@
 import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Features/search/presentation/views/widget/popular_categories_item.dart';
+import 'package:dikkan/Features/search/presentation/views/widget/popular_category_grid_list_view.dart';
 import 'package:flutter/material.dart';
 
 class PopularCategories extends StatelessWidget {
@@ -19,7 +19,7 @@ class PopularCategories extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          PopularCategoriesItem(),
+          PopularCategoryGridListView(),
         ],
       ),
     );
