@@ -17,6 +17,7 @@ class _DikkanAppState extends State<DikkanApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      
       theme: ThemeData(
         primaryColor: kPrimaryColor,
       ),

@@ -27,7 +27,9 @@ class CustomNavigationBar extends StatelessWidget {
                 ),
                 Text(
                   'Home',
-                  style: TextStyle(color: Color(0xffD9D9D9)),
+                  style: TextStyle(
+                    color: Color(0xffD9D9D9),
+                  ),
                 ),
               ],
             ),
@@ -41,7 +43,12 @@ class CustomNavigationBar extends StatelessWidget {
                   MyFlutterApp.orders_icon,
                   color: Color(0xffD9D9D9),
                 ),
-                Text('Orders', style: TextStyle(color: Color(0xffD9D9D9))),
+                Text(
+                  'Orders',
+                  style: TextStyle(
+                    color: Color(0xffD9D9D9),
+                  ),
+                ),
               ],
             ),
           ),
@@ -54,7 +61,12 @@ class CustomNavigationBar extends StatelessWidget {
                   MyFlutterApp.search_icon,
                   color: Color(0xffD9D9D9),
                 ),
-                Text('Search', style: TextStyle(color: Color(0xffD9D9D9))),
+                Text(
+                  'Search',
+                  style: TextStyle(
+                    color: Color(0xffD9D9D9),
+                  ),
+                ),
               ],
             ),
           ),
@@ -69,7 +81,9 @@ class CustomNavigationBar extends StatelessWidget {
                 ),
                 Text(
                   'Account',
-                  style: TextStyle(color: Color(0xffD9D9D9)),
+                  style: TextStyle(
+                    color: Color(0xffD9D9D9),
+                  ),
                 ),
               ],
             ),
