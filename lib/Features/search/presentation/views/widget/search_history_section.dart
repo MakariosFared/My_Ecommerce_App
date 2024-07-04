@@ -7,7 +7,7 @@ class SearchHistorySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 22),
+      padding: const EdgeInsets.symmetric(horizontal: 14),
       child: Column(
         children: [
           const Row(
@@ -34,59 +34,100 @@ class SearchHistorySection extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Padding(
-              padding: EdgeInsets.all(14),
+              padding: EdgeInsets.symmetric(horizontal: 14),
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   ListTile(
+                    dense: true,
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Spaghetti with Vegetables'),
-                    trailing: Icon(Icons.clear_rounded),
+                    title: Text(
+                      'Spaghetti with Vegetables',
+                      style: Styles.textStyleSfProDisplayRegular12,
+                    ),
+                    trailing: Icon(
+                      Icons.clear_rounded,
+                      size: 16,
+                    ),
                   ),
                   Divider(
-                    height: 1,
+                    height: 0.1,
                     thickness: 1,
                   ),
                   ListTile(
+                    dense: true,
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Vegetable Omelet'),
-                    trailing: Icon(Icons.clear_rounded),
+                    title: Text(
+                      'Vegetable Omelet',
+                      style: Styles.textStyleSfProDisplayRegular12,
+                    ),
+                    trailing: Icon(
+                      Icons.clear_rounded,
+                      size: 16,
+                    ),
                   ),
                   Divider(
-                    height: 1,
+                    height: 0.1,
                     thickness: 1,
                   ),
                   ListTile(
+                    dense: true,
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Burger Menu'),
-                    trailing: Icon(Icons.clear_rounded),
+                    title: Text(
+                      'Burger Menu',
+                      style: Styles.textStyleSfProDisplayRegular12,
+                    ),
+                    trailing: Icon(
+                      Icons.clear_rounded,
+                      size: 16,
+                    ),
                   ),
                   Divider(
-                    height: 1,
+                    height: 0.1,
                     thickness: 1,
                   ),
                   ListTile(
+                    dense: true,
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Waffle'),
-                    trailing: Icon(Icons.clear_rounded),
+                    title: Text(
+                      'Waffle',
+                      style: Styles.textStyleSfProDisplayRegular12,
+                    ),
+                    trailing: Icon(
+                      Icons.clear_rounded,
+                      size: 16,
+                    ),
                   ),
                   Divider(
-                    height: 1,
+                    height: 0.1,
                     thickness: 1,
                   ),
                   ListTile(
+                    dense: true,
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Chicken Wings'),
-                    trailing: Icon(Icons.clear_rounded),
+                    title: Text(
+                      'Chicken Wings',
+                      style: Styles.textStyleSfProDisplayRegular12,
+                    ),
+                    trailing: Icon(
+                      Icons.clear_rounded,
+                      size: 16,
+                    ),
                   ),
                   Divider(
-                    height: 1,
+                    height: 0.1,
                     thickness: 1,
                   ),
                   ListTile(
+                    dense: true,
                     contentPadding: EdgeInsets.zero,
-                    title: Text('Strawberry Waffle'),
-                    trailing: Icon(Icons.clear_rounded),
+                    title: Text(
+                      'Strawberry Waffle',
+                      style: Styles.textStyleSfProDisplayRegular12,
+                    ),
+                    trailing: Icon(
+                      Icons.clear_rounded,
+                      size: 16,
+                    ),
                   ),
                 ],
               ),

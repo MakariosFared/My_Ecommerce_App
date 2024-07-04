@@ -1,5 +1,6 @@
 import 'package:dikkan/Features/search/presentation/views/widget/custom_search_header.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/custom_search_text_field.dart';
+import 'package:dikkan/Features/search/presentation/views/widget/popular_categories.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/search_history_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,6 +12,7 @@ class SearchViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const CustomSearchHeader(),
           const SizedBox(
@@ -31,6 +33,10 @@ class SearchViewBody extends StatelessWidget {
             height: 30,
           ),
           const SearchHistorySection(),
+          const SizedBox(
+            height: 30,
+          ),
+          const PopularCategories(),
         ],
       ),
     );

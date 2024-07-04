@@ -7,6 +7,18 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      // bottomNavigationBar: const CustomNavigationBar(),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   backgroundColor: kGreenColor,
+      //   elevation: 0,
+      //   shape: const CircleBorder(),
+      //   child: const Icon(
+      //     FontAwesomeIcons.bagShopping,
+      //     color: Colors.white,
+      //   ),
+      // ),
       body: SearchViewBody(),
     );
   }
