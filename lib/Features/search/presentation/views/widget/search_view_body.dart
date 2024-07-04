@@ -11,34 +11,38 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const CustomSearchHeader(),
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14),
-            child: Row(
-              children: [
-                const Expanded(
-                  child: CustomSearchTextField(),
+      child: CustomScrollView(slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CustomSearchHeader(),
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 14),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: CustomSearchTextField(),
+                    ),
+                    SvgPicture.asset('assets/images/filter Icon.svg')
+                  ],
                 ),
-                SvgPicture.asset('assets/images/filter Icon.svg')
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const SearchHistorySection(),
+              const SizedBox(
+                height: 30,
+              ),
+              const PopularCategories(),
+            ],
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          const SearchHistorySection(),
-          const SizedBox(
-            height: 30,
-          ),
-          const PopularCategories(),
-        ],
-      ),
+        ),
+      ]),
     );
   }
 }
