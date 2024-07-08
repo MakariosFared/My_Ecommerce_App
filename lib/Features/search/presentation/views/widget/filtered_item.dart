@@ -27,14 +27,16 @@ class FilteredItem extends StatelessWidget {
             padding: const EdgeInsets.all(14),
             child: Image.asset(
               filteredItemsModel.image,
-              // fit: BoxFit.cover,
+              fit: BoxFit.cover,
             ),
           ),
           Text(
             filteredItemsModel.filteredItemsName,
             textAlign: TextAlign.center,
             style: Styles.textStyleSfProDisplayRegular12.copyWith(
-                fontWeight: FontWeight.w500, color: const Color(0xff8A8585)),
+              fontWeight: FontWeight.w500,
+              color: const Color(0xff8A8585),
+            ),
           ),
         ],
       ),

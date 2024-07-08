@@ -39,8 +39,8 @@ class FilteredItemsSection extends StatelessWidget {
       itemCount: filteredItemsModel.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 18,
+        mainAxisSpacing: 14,
+        crossAxisSpacing: 14,
         childAspectRatio: 119 / 147,
       ),
       itemBuilder: (BuildContext context, int index) {
