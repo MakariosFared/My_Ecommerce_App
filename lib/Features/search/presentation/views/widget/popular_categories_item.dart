@@ -1,11 +1,14 @@
 import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/Features/search/data/models/popular_category_model.dart';
 import 'package:flutter/material.dart';
 
 class PopularCategoriesItem extends StatelessWidget {
   const PopularCategoriesItem({
     super.key,
+    required this.popularCategoryModel,
   });
 
+  final PopularCategoryModel popularCategoryModel;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -16,8 +19,8 @@ class PopularCategoriesItem extends StatelessWidget {
           width: 119,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            image: const DecorationImage(
-              image: AssetImage('assets/images/vegetables.png'),
+            image: DecorationImage(
+              image: AssetImage(popularCategoryModel.image),
               fit: BoxFit.fill,
             ),
           ),
@@ -34,7 +37,7 @@ class PopularCategoriesItem extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              'Pizza',
+              popularCategoryModel.popularCategoryName,
               style: Styles.textStyleSfProDisplayRegular12.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,

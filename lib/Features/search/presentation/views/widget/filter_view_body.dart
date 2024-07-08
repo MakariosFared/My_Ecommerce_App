@@ -28,8 +28,20 @@ class FilterViewBody extends StatelessWidget {
             ],
           ),
         ),
-        
+        const SizedBox(
+          height: 18,
+        ),
+        const FilteredItemsSection(),
       ],
     );
+  }
+}
+
+class FilteredItemsSection extends StatelessWidget {
+  const FilteredItemsSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
