@@ -6,14 +6,9 @@ import 'package:dikkan/Features/home/presentation/views/widgets/popular_section.
 import 'package:dikkan/Features/home/presentation/views/widgets/special_offer_section.dart';
 import 'package:flutter/material.dart';
 
-class HomeViewBody extends StatefulWidget {
+class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
-  @override
-  State<HomeViewBody> createState() => _HomeViewBodyState();
-}
-
-class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(

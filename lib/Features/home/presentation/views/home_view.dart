@@ -1,17 +1,38 @@
-import 'package:dikkan/Core/utils/widgets/custom_navigation_bar.dart';
+import 'package:dikkan/Core/utils/widgets/custom_icon.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:dikkan/Features/search/presentation/views/search_view.dart';
+import 'package:dikkan/account.dart';
 import 'package:dikkan/constant.dart';
+import 'package:dikkan/orders.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  int selectedTab = 0;
+
+  final List<Widget> screens = [
+    const HomeView(),
+    const SearchView(),
+    const OrdersView(),
+    const AccountView(),
+  ];
+
+  final PageStorageBucket bucket = PageStorageBucket();
+
+  Widget currentScreen = const HomeViewBody();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: kPrimaryColor,
-      bottomNavigationBar: const CustomNavigationBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -23,7 +44,140 @@ class HomeView extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      body: const HomeViewBody(),
+      body: PageStorage(
+        bucket: bucket,
+        child: currentScreen,
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        elevation: 0,
+        shadowColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            GestureDetector(
+              onTap: () {
+                setState(
+                  () {
+                    currentScreen = const HomeViewBody();
+                    selectedTab = 0;
+                  },
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    MyFlutterApp.home_icon,
+                    color: selectedTab == 0
+                        ? kGreenColor
+                        : const Color(0xffD9D9D9),
+                  ),
+                  Text(
+                    'Home',
+                    style: TextStyle(
+                      color: selectedTab == 0
+                          ? kGreenColor
+                          : const Color(0xffD9D9D9),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(
+                  () {
+                    currentScreen = const OrdersView();
+                    selectedTab = 1;
+                  },
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    MyFlutterApp.orders_icon,
+                    color: selectedTab == 1
+                        ? kGreenColor
+                        : const Color(0xffD9D9D9),
+                  ),
+                  Text(
+                    'Orders',
+                    style: TextStyle(
+                      color: selectedTab == 1
+                          ? kGreenColor
+                          : const Color(0xffD9D9D9),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(
+                  () {
+                    currentScreen = const SearchView();
+                    selectedTab = 2;
+                  },
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    MyFlutterApp.search_icon,
+                    color: selectedTab == 2
+                        ? kGreenColor
+                        : const Color(0xffD9D9D9),
+                  ),
+                  Text(
+                    'Search',
+                    style: TextStyle(
+                      color: selectedTab == 2
+                          ? kGreenColor
+                          : const Color(0xffD9D9D9),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(
+                  () {
+                    currentScreen = const AccountView();
+                    selectedTab = 3;
+                  },
+                );
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    MyFlutterApp.account_icon,
+                    color: selectedTab == 3
+                        ? kGreenColor
+                        : const Color(0xffD9D9D9),
+                  ),
+                  Text(
+                    'Account',
+                    style: TextStyle(
+                      color: selectedTab == 3
+                          ? kGreenColor
+                          : const Color(0xffD9D9D9),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

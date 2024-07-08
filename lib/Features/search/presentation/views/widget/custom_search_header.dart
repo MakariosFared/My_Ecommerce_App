@@ -1,5 +1,7 @@
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/widgets/current_spot.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomSearchHeader extends StatelessWidget {
   const CustomSearchHeader({
@@ -14,7 +16,8 @@ class CustomSearchHeader extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              GoRouter.of(context).push(AppRouter.kHomeView);
             },
             child: Container(
               padding: const EdgeInsets.all(10),

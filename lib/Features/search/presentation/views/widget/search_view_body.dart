@@ -39,6 +39,9 @@ class SearchViewBody extends StatelessWidget {
                 height: 30,
               ),
               const PopularCategories(),
+              const SizedBox(
+                height: 34,
+              ),
             ],
           ),
         ),
