@@ -1,4 +1,5 @@
 import 'package:dikkan/Core/utils/widgets/custom_arrow_back.dart';
+import 'package:dikkan/Features/search/presentation/views/widget/filtered_item.dart';
 import 'package:flutter/material.dart';
 
 class FilterViewBody extends StatelessWidget {
@@ -42,6 +43,7 @@ class FilteredItemsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const FilteredItem();
   }
 }
+
