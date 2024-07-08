@@ -34,7 +34,7 @@ class FilteredItem extends StatelessWidget {
             filteredItemsModel.filteredItemsName,
             textAlign: TextAlign.center,
             style: Styles.textStyleSfProDisplayRegular12.copyWith(
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               color: const Color(0xff8A8585),
             ),
           ),
