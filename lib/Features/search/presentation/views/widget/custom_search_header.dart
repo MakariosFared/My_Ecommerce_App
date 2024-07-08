@@ -1,5 +1,6 @@
 import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/widgets/current_spot.dart';
+import 'package:dikkan/Core/utils/widgets/custom_arrow_back.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,19 +15,10 @@ class CustomSearchHeader extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         children: [
-          GestureDetector(
+          CustomArrowBack(
             onTap: () {
-              // Navigator.pop(context);
               GoRouter.of(context).push(AppRouter.kHomeView);
             },
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: const Icon(Icons.arrow_back),
-            ),
           ),
           const SizedBox(width: 13),
           const CurrentSpot(),
@@ -39,7 +31,7 @@ class CustomSearchHeader extends StatelessWidget {
               width: 84,
               height: 54,
             ),
-          )
+          ),
         ],
       ),
     );

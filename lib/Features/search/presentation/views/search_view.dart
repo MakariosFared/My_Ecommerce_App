@@ -9,7 +9,6 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: kPrimaryColor,
-      // bottomNavigationBar: const CustomNavigationBar(),
       
       body: SearchViewBody(),
     );

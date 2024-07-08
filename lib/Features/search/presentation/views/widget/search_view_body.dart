@@ -1,9 +1,11 @@
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/custom_search_header.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/custom_search_text_field.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/popular_categories.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/search_history_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -27,7 +29,12 @@ class SearchViewBody extends StatelessWidget {
                     const Expanded(
                       child: CustomSearchTextField(),
                     ),
-                    SvgPicture.asset('assets/images/filter Icon.svg')
+                    GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context).push(AppRouter.kFilterView);
+                      },
+                      child: SvgPicture.asset('assets/images/filter Icon.svg'),
+                    )
                   ],
                 ),
               ),

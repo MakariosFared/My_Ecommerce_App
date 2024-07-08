@@ -5,6 +5,7 @@ import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/verification_otp_view.dart';
 import 'package:dikkan/Features/home/presentation/views/home_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
+import 'package:dikkan/Features/search/presentation/views/filter_view.dart';
 import 'package:dikkan/Features/search/presentation/views/search_view.dart';
 import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -17,8 +18,8 @@ abstract class AppRouter {
   static const String kForgetPassword = '/forgetPassword';
   static const String kVerification = '/verificationWithOTP';
   static const String kResetPassword = '/resetPassword';
-    static const String kSearch = '/search';
-
+  static const String kSearch = '/search';
+  static const String kFilterView = '/filterView';
 
   static final router = GoRouter(
     routes: [
@@ -57,6 +58,10 @@ abstract class AppRouter {
       GoRoute(
         path: kSearch,
         builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: kFilterView,
+        builder: (context, state) => const FilterView(),
       ),
     ],
   );
