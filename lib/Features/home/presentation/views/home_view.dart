@@ -1,11 +1,13 @@
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/widgets/custom_icon.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:dikkan/Features/my_account/presentation/views/my_account_view.dart';
 import 'package:dikkan/Features/search/presentation/views/search_view.dart';
-import 'package:dikkan/account.dart';
 import 'package:dikkan/constant.dart';
 import 'package:dikkan/orders.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -21,7 +23,7 @@ class _HomeViewState extends State<HomeView> {
     const HomeView(),
     const SearchView(),
     const OrdersView(),
-    const AccountView(),
+    const MyAccountView()
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
@@ -148,12 +150,13 @@ class _HomeViewState extends State<HomeView> {
             ),
             GestureDetector(
               onTap: () {
-                setState(
-                  () {
-                    currentScreen = const AccountView();
-                    selectedTab = 3;
-                  },
-                );
+                GoRouter.of(context).push(AppRouter.kMyAccount);
+                // setState(
+                //   () {
+                //     currentScreen = const MyAccountView();
+                //     selectedTab = 3;
+                //   },
+                // );
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

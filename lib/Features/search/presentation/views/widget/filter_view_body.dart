@@ -36,30 +36,42 @@ class FilterViewBody extends StatelessWidget {
             height: 18,
           ),
           const FilteredItemsSection(),
-          const SizedBox(
-            height: 30,
+          const Flexible(
+            child: SizedBox(
+              height: 30,
+            ),
           ),
           const SortBySection(),
-          const SizedBox(
-            height: 30,
+          const Flexible(
+            child: SizedBox(
+              height: 30,
+            ),
           ),
           const SortByPrice(),
-          const SizedBox(
-            height: 30,
+          const Flexible(
+            child: SizedBox(
+              height: 30,
+            ),
           ),
           SizedBox(
             width: double.infinity,
             height: 48,
             child: CustomButton(
               style: Styles.textStyleSfProDisplayRegular12.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14),
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
               text: 'Apply Filter',
               onPressed: () {},
               borderRadius: BorderRadius.circular(24),
             ),
-          )
+          ),
+          const Flexible(
+            child: SizedBox(
+              height: 30,
+            ),
+          ),
         ],
       ),
     );
