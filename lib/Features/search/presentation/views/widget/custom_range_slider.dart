@@ -33,10 +33,16 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
         inactiveDisabledTrackBarColor: Color(0xffECECEC),
         inactiveTrackBarHeight: 6,
         activeTrackBarHeight: 6,
-        activeTrackBar: BoxDecoration(color: Color(0xFF00BAAB)),
+        inactiveTrackBar: BoxDecoration(
+          borderRadius: BorderRadius.horizontal(
+            left: Radius.circular(3.5),
+            right: Radius.circular(3.5),
+          ),
+        ),
+        activeTrackBar: BoxDecoration(color: kGreenColor),
       ),
       tooltip: FlutterSliderTooltip(
-        positionOffset: FlutterSliderTooltipPositionOffset(top: 90),
+        positionOffset: FlutterSliderTooltipPositionOffset(top: 80),
         disableAnimation: true,
         custom: (value) {
           return Text(
