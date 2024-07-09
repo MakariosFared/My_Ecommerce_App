@@ -23,41 +23,44 @@ class OnBoardContent extends StatelessWidget {
   final String buttonText;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Align(
-          alignment: Alignment.topRight,
-          child: SizedBox(
-            height: 54,
-            width: 84,
-            child: Image.asset(AssetsData.logo),
+    return Padding(
+      padding: const EdgeInsets.only(left: 16),
+      child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Align(
+            alignment: Alignment.topRight,
+            child: SizedBox(
+              height: 54,
+              width: 84,
+              child: Image.asset(AssetsData.logo),
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 44,
-        ),
-        Flexible(
-          child: SizedBox(
-            height: 365,
-            width: 365,
-            child: SvgPicture.asset(image),
+          const SizedBox(
+            height: 44,
           ),
-        ),
-        const SizedBox(
-          height: 48,
-        ),
-        ContentContainer(
-            selectedIndex: selectedIndex,
-            onTap: onTap,
-            title: title,
-            description: description,
-            buttonText: buttonText,
-            onPressed: onPressed),
-        const SizedBox(
-          height: 24,
-        ),
-      ],
+          Flexible(
+            child: SizedBox(
+              height: 365,
+              width: 365,
+              child: SvgPicture.asset(image),
+            ),
+          ),
+          const SizedBox(
+            height: 48,
+          ),
+          ContentContainer(
+              selectedIndex: selectedIndex,
+              onTap: onTap,
+              title: title,
+              description: description,
+              buttonText: buttonText,
+              onPressed: onPressed),
+          const SizedBox(
+            height: 24,
+          ),
+        ],
+      ),
     );
   }
 }

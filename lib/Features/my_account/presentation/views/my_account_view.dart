@@ -7,9 +7,7 @@ class MyAccountView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(
-        child: MyAccountViewBody(),
-      ),
+      body: MyAccountViewBody(),
     );
   }
 }
