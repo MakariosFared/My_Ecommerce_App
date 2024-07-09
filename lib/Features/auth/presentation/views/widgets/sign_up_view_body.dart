@@ -122,6 +122,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 height: 50,
                 width: 366,
                 child: CustomButton(
+                  borderRadius: BorderRadius.circular(40),
                   text: 'Create Account',
                   onPressed: () {},
                 ),

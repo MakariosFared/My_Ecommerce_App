@@ -1,4 +1,6 @@
+import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_arrow_back.dart';
+import 'package:dikkan/Core/utils/widgets/custom_button.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/filtered_item_section.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/sort_by_price.dart';
 import 'package:dikkan/Features/search/presentation/views/widget/sort_by_section.dart';
@@ -42,6 +44,22 @@ class FilterViewBody extends StatelessWidget {
             height: 30,
           ),
           const SortByPrice(),
+          const SizedBox(
+            height: 30,
+          ),
+          SizedBox(
+            width: double.infinity,
+            height: 48,
+            child: CustomButton(
+              style: Styles.textStyleSfProDisplayRegular12.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14),
+              text: 'Apply Filter',
+              onPressed: () {},
+              borderRadius: BorderRadius.circular(24),
+            ),
+          )
         ],
       ),
     );

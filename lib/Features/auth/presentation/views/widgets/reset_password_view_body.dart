@@ -67,6 +67,7 @@ class ResetPasswordViewBody extends StatelessWidget {
                 right: 13.5,
               ),
               child: CustomButton(
+                borderRadius: BorderRadius.circular(40),
                 text: 'Done',
                 onPressed: () {
                   // GoRouter.of(context).push(AppRouter.kVerification);

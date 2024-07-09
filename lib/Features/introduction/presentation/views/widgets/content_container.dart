@@ -58,6 +58,7 @@ class ContentContainer extends StatelessWidget {
               height: 24,
             ),
             CustomButton(
+              borderRadius: BorderRadius.circular(40),
               text: buttonText,
               onPressed: onPressed,
             ),

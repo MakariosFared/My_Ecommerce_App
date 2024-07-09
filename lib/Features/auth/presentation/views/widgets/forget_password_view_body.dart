@@ -59,6 +59,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
                 right: 13.5,
               ),
               child: CustomButton(
+                borderRadius: BorderRadius.circular(40),
                 text: 'Send SMS Code',
                 onPressed: () {
                   GoRouter.of(context).push(AppRouter.kVerification);
