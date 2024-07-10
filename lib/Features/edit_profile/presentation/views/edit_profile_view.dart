@@ -8,7 +8,9 @@ class EditProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         toolbarHeight: MediaQuery.of(context).size.height * 0.12,
         centerTitle: true,
         elevation: 0,
