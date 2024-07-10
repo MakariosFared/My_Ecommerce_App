@@ -1,7 +1,7 @@
 import 'package:dikkan/Features/my_account/presentation/views/widgets/custom_list_tile.dart';
-import 'package:dikkan/Features/my_account/presentation/views/widgets/profile_header.dart';
-import 'package:dikkan/constant.dart';
+import 'package:dikkan/Features/my_account/presentation/views/widgets/my_account_background.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyAccountViewBody extends StatelessWidget {
   const MyAccountViewBody({super.key});
@@ -10,25 +10,11 @@ class MyAccountViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Column(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height * 0.43,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: kGreenColor,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(24),
-                  bottomRight: Radius.circular(24),
-                ),
-              ),
-              child: const ProfileHeader(),
-            ),
-          ],
-        ),
+        const MyAccountBackground(),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 33),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 225,
@@ -42,11 +28,9 @@ class MyAccountViewBody extends StatelessWidget {
                   ),
                 ),
                 child: const Padding(
-                  padding: EdgeInsets.only(
-                    top: 10,
-                    bottom: 15,
-                    left: 16,
-                    right: 16,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 14,
                   ),
                   child: Column(
                     children: [
@@ -71,7 +55,80 @@ class MyAccountViewBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 14,
+              ),
+              Text(
+                'Settings',
+                style: GoogleFonts.dmSans(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              Container(
+                // height: 240,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 14,
+                  ),
+                  child: Column(
+                    children: [
+                      CustomListTile(
+                        leadingImage: 'assets/images/language_svgrepo.svg',
+                        title: 'Arabic',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              Text(
+                'Rewards',
+                style: GoogleFonts.dmSans(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              Container(
+                // height: 240,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 14,
+                  ),
+                  child: Column(
+                    children: [
+                      CustomListTile(
+                        leadingImage: 'assets/images/Location.svg',
+                        title: 'My Addresses',
+                      ),
+                      CustomListTile(
+                        title: 'Family Members',
+                        leadingImage: 'assets/images/people.svg',
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
@@ -80,3 +137,5 @@ class MyAccountViewBody extends StatelessWidget {
     );
   }
 }
+
+

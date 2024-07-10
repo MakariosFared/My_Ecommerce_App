@@ -1,0 +1,9 @@
+<svg id="privacy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <rect id="Icon" width="16" height="16" fill="none"/>
+  <g id="vuesax_linear_shield" data-name="vuesax/linear/shield">
+    <g id="shield">
+      <path id="Vector" d="M6.747.155,10.073,1.4a2.315,2.315,0,0,1,1.393,2.013V8.368a3.241,3.241,0,0,1-1.153,2.293L7.447,12.8a3.034,3.034,0,0,1-3.427,0l-2.867-2.14A3.241,3.241,0,0,1,0,8.368V3.415A2.313,2.313,0,0,1,1.393,1.408L4.72.155a3.39,3.39,0,0,1,2.027,0Z" transform="translate(2.273 1.332)" fill="#17af98"/>
+      <path id="Vector-2" data-name="Vector" d="M0,0H16V16H0Z" transform="translate(16 16) rotate(180)" fill="none" opacity="0"/>
+    </g>
+  </g>
+</svg>
