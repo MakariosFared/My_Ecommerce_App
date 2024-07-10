@@ -15,13 +15,15 @@ class ProfileHeader extends StatelessWidget {
           height: 80,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 33),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
+                alignment: Alignment.topLeft,
+                iconSize: 24,
                 padding: EdgeInsets.zero,
                 onPressed: () {
                   Navigator.pop(context);
@@ -65,15 +67,12 @@ class ProfileHeader extends StatelessWidget {
                   ),
                 ],
               ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                onPressed: () {},
-                icon: const Icon(
-                  size: 24,
-                  Icons.edit,
-                  color: Colors.white,
+              GestureDetector(
+                onTap: () {},
+                child: SvgPicture.asset(
+                  'assets/images/Pencil.svg',
                 ),
-              ),
+              )
             ],
           ),
         ),

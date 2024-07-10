@@ -8,11 +8,15 @@ class CustomListTile extends StatelessWidget {
     required this.leadingImage,
     required this.title,
     this.onTap,
+    this.leadingColor,
+    this.titleColor,
   });
 
   final String leadingImage;
   final String title;
   final void Function()? onTap;
+  final Color? leadingColor;
+  final Color? titleColor;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,11 +28,11 @@ class CustomListTile extends StatelessWidget {
           width: 32,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: const Color(0xffF9FBFB),
+            color: leadingColor ?? const Color(0xffF9FBFB),
           ),
           child: SvgPicture.asset(
             leadingImage,
-            fit: BoxFit.scaleDown,
+            fit: BoxFit.none,
           ),
         ),
         trailing: const Icon(
@@ -38,6 +42,7 @@ class CustomListTile extends StatelessWidget {
         title: Text(
           title,
           style: GoogleFonts.plusJakartaSans(
+            color: titleColor ?? const Color(0xff001F1C),
             fontSize: 14,
             fontWeight: FontWeight.w400,
           ),

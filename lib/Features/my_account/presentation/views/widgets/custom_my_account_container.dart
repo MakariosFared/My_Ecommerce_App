@@ -9,7 +9,6 @@ class CustomMyAccountContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 240,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(

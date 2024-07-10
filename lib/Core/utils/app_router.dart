@@ -3,6 +3,7 @@ import 'package:dikkan/Features/auth/presentation/views/log_in_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/reset_password_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/verification_otp_view.dart';
+import 'package:dikkan/Features/edit_profile/presentation/views/edit_profile_view.dart';
 import 'package:dikkan/Features/home/presentation/views/home_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
 import 'package:dikkan/Features/my_account/presentation/views/my_account_view.dart';
@@ -22,6 +23,7 @@ abstract class AppRouter {
   static const String kSearch = '/search';
   static const String kFilterView = '/filterView';
   static const String kMyAccount = '/myAccount';
+  static const String kEditProfile = '/editProfile';
 
   static final router = GoRouter(
     routes: [
@@ -68,6 +70,10 @@ abstract class AppRouter {
       GoRoute(
         path: kMyAccount,
         builder: (context, state) => const MyAccountView(),
+      ),
+      GoRoute(
+        path: kEditProfile,
+        builder: (context, state) => const EditProfileView(),
       ),
     ],
   );
