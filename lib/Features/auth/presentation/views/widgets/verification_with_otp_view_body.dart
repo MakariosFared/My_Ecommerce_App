@@ -51,8 +51,10 @@ class VerificationWithOtpViewBody extends StatelessWidget {
                   color: const Color(0xff8F9BB3),
                 ),
               ),
-              const Text('Resend',
-                  style: Styles.textStyleSfProDisplayRegular15),
+              const Text(
+                'Resend',
+                style: Styles.textStyleSfProDisplayRegular15,
+              ),
             ],
           ),
         ),

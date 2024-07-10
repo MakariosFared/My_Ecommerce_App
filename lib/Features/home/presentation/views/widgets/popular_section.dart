@@ -1,6 +1,7 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/custom_popular_button.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PopularSection extends StatefulWidget {
   const PopularSection({super.key});
@@ -15,23 +16,26 @@ class _PopularSectionState extends State<PopularSection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 13),
+         Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 13),
           child: Row(
             children: [
               Text(
                 'Popular',
-                style: Styles.textStyleBold20,
+                style: GoogleFonts.nunito(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-              Spacer(),
-              Text(
+              const Spacer(),
+              const Text(
                 'View all',
                 style: Styles.textStyleBold14,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
-              Icon(Icons.arrow_forward_rounded),
+              const Icon(Icons.arrow_forward_rounded),
             ],
           ),
         ),

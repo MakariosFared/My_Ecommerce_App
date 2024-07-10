@@ -4,6 +4,7 @@ import 'package:dikkan/Core/utils/widgets/custom_button.dart';
 import 'package:dikkan/Core/utils/widgets/custom_email_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
   const ForgetPasswordViewBody({super.key});
@@ -32,7 +33,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
           ),
           child: Text(
             'Please enter your Email so we can help you recover your password.',
-            style: Styles.textStyleRegular15.copyWith(
+            style: Styles.textStyleSfProDisplayRegular15.copyWith(
               color: const Color(0xff8F9BB3),
             ),
           ),
@@ -61,6 +62,10 @@ class ForgetPasswordViewBody extends StatelessWidget {
               child: CustomButton(
                 borderRadius: BorderRadius.circular(40),
                 text: 'Send SMS Code',
+                style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
                 onPressed: () {
                   GoRouter.of(context).push(AppRouter.kVerification);
                 },

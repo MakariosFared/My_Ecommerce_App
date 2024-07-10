@@ -17,6 +17,7 @@ dependencies:
   go_router: ^14.1.4
   font_awesome_flutter: ^10.7.0
   flutter_xlider: ^3.5.0
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -43,9 +44,13 @@ flutter:
     - family: SF Pro Display
       fonts:
         - asset: assets/fonts/SF-Pro-Display-Regular.otf
+          weight: 400
         - asset: assets/fonts/SF-Pro-Display-Bold.otf
           weight: 700
-
+        - asset: assets/fonts/SF-Pro-Display-Semibold.otf
+          weight: 600  
+        - asset: assets/fonts/SF-Pro-Display-Medium.otf
+          weight: 500
 
     - family:  MyFlutterApp
       fonts:

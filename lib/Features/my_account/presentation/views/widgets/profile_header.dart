@@ -1,6 +1,6 @@
-import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({
@@ -48,14 +48,20 @@ class ProfileHeader extends StatelessWidget {
                     ),
                     child: Text(
                       'Mina Boules Fouad',
-                      style: Styles.textStyleSemiBold16
-                          .copyWith(color: Colors.white),
+                      style: GoogleFonts.plusJakartaSans(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   Text(
                     'Minaboules@consultant.com',
-                    style: Styles.textStyleMedium12
-                        .copyWith(color: Colors.white),
+                    style: GoogleFonts.plusJakartaSans(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               ),
