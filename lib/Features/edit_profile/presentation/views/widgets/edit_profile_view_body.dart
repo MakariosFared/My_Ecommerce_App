@@ -1,5 +1,6 @@
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_button.dart';
+import 'package:dikkan/Core/utils/widgets/custom_password_text_field.dart';
 import 'package:dikkan/Features/edit_profile/presentation/views/widgets/custom_edit_text_field.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
@@ -112,16 +113,22 @@ class EditProfileViewBody extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                const CustomEditTextField(
-                  hintText: 'Current Password',
+                CustomPasswordTextField(
+                  hint: 'Current Password',
+                  obscureText: true,
+                  isEditView: true,
                 ),
                 const SizedBox(height: 12),
-                const CustomEditTextField(
-                  hintText: 'New Password',
+                CustomPasswordTextField(
+                  obscureText: true,
+                  isEditView: true,
+                  hint: 'New Password',
                 ),
                 const SizedBox(height: 12),
-                const CustomEditTextField(
-                  hintText: 'Re New Password',
+                CustomPasswordTextField(
+                  obscureText: true,
+                  hint: 'Re New Password',
+                  isEditView: true,
                 ),
                 const SizedBox(height: 16),
                 SizedBox(
