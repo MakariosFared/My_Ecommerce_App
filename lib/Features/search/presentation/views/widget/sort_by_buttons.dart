@@ -16,22 +16,24 @@ class SortByButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        fixedSize: const Size.fromWidth(119),
-        backgroundColor: isSelected ? kGreenColor : Colors.white,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+    return Flexible(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          fixedSize: const Size.fromWidth(119),
+          backgroundColor: isSelected ? kGreenColor : Colors.white,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          padding: const EdgeInsets.symmetric(vertical: 14),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 14),
-      ),
-      onPressed: onTap,
-      child: Text(
-        label,
-        style: Styles.textStyleSfProDisplayRegular12.copyWith(
-          fontWeight: FontWeight.w600,
-          color: isSelected ? Colors.white : const Color(0xff8A8585),
+        onPressed: onTap,
+        child: Text(
+          label,
+          style: Styles.textStyleSfProDisplayRegular12.copyWith(
+            fontWeight: FontWeight.w600,
+            color: isSelected ? Colors.white : const Color(0xff8A8585),
+          ),
         ),
       ),
     );

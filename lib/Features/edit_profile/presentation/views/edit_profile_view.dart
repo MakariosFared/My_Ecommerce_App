@@ -10,8 +10,10 @@ class EditProfileView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
+        shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
-        toolbarHeight: MediaQuery.of(context).size.height * 0.12,
+        toolbarHeight: MediaQuery.of(context).size.height * 0.1,
         centerTitle: true,
         elevation: 0,
         leading: Padding(

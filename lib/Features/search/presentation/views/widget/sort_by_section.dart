@@ -37,14 +37,17 @@ class _SortBySectionState extends State<SortBySection> {
                     });
                   },
                 ),
-                SortByButtons(
-                  label: 'Rating',
-                  isSelected: selectedButton == 'Rating',
-                  onTap: () {
-                    setState(() {
-                      selectedButton = 'Rating';
-                    });
-                  },
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 14),
+                  child: SortByButtons(
+                    label: 'Rating',
+                    isSelected: selectedButton == 'Rating',
+                    onTap: () {
+                      setState(() {
+                        selectedButton = 'Rating';
+                      });
+                    },
+                  ),
                 ),
                 SortByButtons(
                   label: 'Near Me',
@@ -72,14 +75,17 @@ class _SortBySectionState extends State<SortBySection> {
                     });
                   },
                 ),
-                SortByButtons(
-                  label: 'Feature',
-                  isSelected: selectedButton == 'Feature',
-                  onTap: () {
-                    setState(() {
-                      selectedButton = 'Feature';
-                    });
-                  },
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 14),
+                  child: SortByButtons(
+                    label: 'Feature',
+                    isSelected: selectedButton == 'Feature',
+                    onTap: () {
+                      setState(() {
+                        selectedButton = 'Feature';
+                      });
+                    },
+                  ),
                 ),
                 SortByButtons(
                   label: 'Recent',
