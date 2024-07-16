@@ -4,7 +4,7 @@ import 'package:dikkan/Features/home/presentation/views/widgets/home_view_body.d
 import 'package:dikkan/Features/my_account/presentation/views/my_account_view.dart';
 import 'package:dikkan/Features/search/presentation/views/search_view.dart';
 import 'package:dikkan/constant.dart';
-import 'package:dikkan/orders.dart';
+import 'package:dikkan/Features/orders/presentation/views/orders_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
