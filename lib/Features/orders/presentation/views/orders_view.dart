@@ -1,5 +1,5 @@
 import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Features/orders/presentation/views/widgets/ongoing_body.dart';
+import 'package:dikkan/Features/orders/presentation/views/widgets/orders_view_body.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -38,6 +38,9 @@ class _OrdersViewState extends State<OrdersView>
         ),
         backgroundColor: Colors.white,
         bottom: TabBar(
+          indicatorPadding: EdgeInsets.zero,
+          labelPadding: EdgeInsets.zero,
+          padding: EdgeInsets.zero,
           overlayColor: WidgetStateProperty.all(Colors.transparent),
           labelColor: kGreenColor,
           unselectedLabelColor: const Color(0xff8F9BB3),
@@ -60,24 +63,7 @@ class _OrdersViewState extends State<OrdersView>
           ],
         ),
       ),
-      body: TabBarView(
-        controller: tabController,
-        children: [
-          const OnGoingBody(),
-          Center(
-            child: Text(
-              'history',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-          ),
-          Center(
-            child: Text(
-              'draft',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-          ),
-        ],
-      ),
+      body: OrdersViewBody(tabController: tabController),
     );
   }
 }

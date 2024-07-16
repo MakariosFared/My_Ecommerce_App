@@ -26,7 +26,7 @@ class OnGoingBody extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 20),
+        // const SizedBox(height: 20),
         Text(
           'Ongoing is Empty',
           style: Styles.textStyleSfProDisplayMedium16.copyWith(
@@ -48,6 +48,7 @@ class OnGoingBody extends StatelessWidget {
         ),
         SizedBox(
           width: 170,
+          height: 44,
           child: CustomButton(
             borderRadius: BorderRadius.circular(10),
             text: 'Go Discover',
