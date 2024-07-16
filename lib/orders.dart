@@ -1,15 +1,86 @@
+import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
-class OrdersView extends StatelessWidget {
+class OrdersView extends StatefulWidget {
   const OrdersView({super.key});
+
+  @override
+  State<OrdersView> createState() => _OrdersViewState();
+}
+
+class _OrdersViewState extends State<OrdersView>
+    with SingleTickerProviderStateMixin {
+  late final TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(
+      length: 3,
+      initialIndex: 1,
+      vsync: this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(child: Text('OrdersView')),
+      backgroundColor: const Color(0xffF7F9FC),
       appBar: AppBar(
-        title:const Text('OrdersView'),
-
+        leadingWidth: 0,
+        leading: const SizedBox(),
+        toolbarHeight: 100,
+        title: const Text(
+          'Orders',
+          style: Styles.textStyleSfProDisplayBold26,
+        ),
+        backgroundColor: Colors.white,
+        bottom: TabBar(
+          overlayColor: WidgetStateProperty.all(Colors.transparent),
+          labelColor: kGreenColor,
+          unselectedLabelColor: const Color(0xff8F9BB3),
+          labelStyle: Styles.textStyleSfProDisplayRegular15.copyWith(
+            fontSize: 17,
+            fontWeight: FontWeight.w700,
+          ),
+          unselectedLabelStyle: Styles.textStyleSfProDisplayRegular15.copyWith(
+            fontSize: 17,
+            fontWeight: FontWeight.w400,
+          ),
+          indicatorColor: kGreenColor,
+          indicatorSize: TabBarIndicatorSize.tab,
+          dividerColor: const Color(0xffF7F9FC),
+          controller: tabController,
+          tabs: const [
+            Tab(text: 'Ongoing'),
+            Tab(text: 'History'),
+            Tab(text: 'Draft'),
+          ],
+        ),
+      ),
+      body: TabBarView(
+        controller: tabController,
+        children: [
+          Center(
+            child: Text(
+              'Ongoing',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),
+          Center(
+            child: Text(
+              'history',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),
+          Center(
+            child: Text(
+              'draft',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),
+        ],
       ),
     );
   }

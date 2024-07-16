@@ -19,6 +19,7 @@ class SortByButtons extends StatelessWidget {
     return Flexible(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          overlayColor: Colors.transparent,
           fixedSize: const Size.fromWidth(119),
           backgroundColor: isSelected ? kGreenColor : Colors.white,
           elevation: 0,
