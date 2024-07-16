@@ -6,7 +6,7 @@ import 'package:dikkan/Features/search/presentation/views/search_view.dart';
 import 'package:dikkan/constant.dart';
 import 'package:dikkan/orders.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeView extends StatefulWidget {
@@ -41,9 +41,8 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: kGreenColor,
         elevation: 0,
         shape: const CircleBorder(),
-        child: const Icon(
-          FontAwesomeIcons.bagShopping,
-          color: Colors.white,
+        child: SvgPicture.asset(
+          'assets/images/bag.svg',
         ),
       ),
       body: PageStorage(

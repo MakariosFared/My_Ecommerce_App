@@ -14,13 +14,17 @@ class HomeViewBody extends StatelessWidget {
     return const SafeArea(
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: CustomHomeHeader()),
+          SliverToBoxAdapter(
+            child: CustomHomeHeader(),
+          ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 20,
             ),
           ),
-          SliverToBoxAdapter(child: CustomHomeTextField()),
+          SliverToBoxAdapter(
+            child: CustomHomeTextField(),
+          ),
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.only(left: 22),

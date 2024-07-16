@@ -24,6 +24,7 @@ class ProfileHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
+                highlightColor: Colors.transparent,
                 alignment: Alignment.topLeft,
                 iconSize: 24,
                 padding: EdgeInsets.zero,

@@ -19,6 +19,7 @@ class EditProfileView extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 20),
           child: IconButton(
+            highlightColor: Colors.transparent,
             onPressed: () {
               Navigator.pop(context);
             },
