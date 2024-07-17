@@ -1,11 +1,15 @@
 import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/Features/orders/data/models/ongoing_item_model.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
 class OngoingItem extends StatelessWidget {
   const OngoingItem({
     super.key,
+    required this.ongoingItemModel,
   });
+
+  final OngoingItemModel ongoingItemModel;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +28,10 @@ class OngoingItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
           child: Row(
+            mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
+              //TODO: #1 image
               Container(
                 width: 95,
                 decoration: const BoxDecoration(
@@ -46,7 +52,9 @@ class OngoingItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Kichi Coffee & Drink',
+                      textWidthBasis: TextWidthBasis.parent,
+                      overflow: TextOverflow.ellipsis,
+                      ongoingItemModel.productName,
                       style: Styles.textStyleSfProDisplayRegular15
                           .copyWith(fontWeight: FontWeight.w600),
                     ),
@@ -60,37 +68,44 @@ class OngoingItem extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '43e2 116H',
+                          ongoingItemModel.id,
                           style: Styles.textStyleSfProDisplayRegular12.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                       ],
                     ),
-                    Text(
-                      '4 Items',
-                      style: Styles.textStyleSfProDisplayRegular12.copyWith(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 13,
-                        color: const Color(0xffACB1C0),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width - 157,
+                      child: Row(
+                        children: [
+                          Text(
+                            '${ongoingItemModel.nubOfItems} Items',
+                            style:
+                                Styles.textStyleSfProDisplayRegular12.copyWith(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 13,
+                              color: const Color(0xffACB1C0),
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            ongoingItemModel.state,
+                            style:
+                                Styles.textStyleSfProDisplayRegular12.copyWith(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 13,
+                              color: ongoingItemModel.state == 'Shipping'
+                                  ? kGreenColor
+                                  : ongoingItemModel.state == 'Waiting'
+                                      ? const Color(0xff25418B)
+                                      : const Color(0xffE02020),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
-                ),
-              ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 14,
-                  right: 10,
-                ),
-                child: Text(
-                  'Shipping',
-                  style: Styles.textStyleSfProDisplayRegular12.copyWith(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 13,
-                    color: kGreenColor,
-                  ),
                 ),
               ),
             ],
