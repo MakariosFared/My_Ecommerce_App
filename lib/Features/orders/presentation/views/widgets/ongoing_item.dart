@@ -9,17 +9,20 @@ class OngoingItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 10,
-      shadowColor: Colors.black.withOpacity(0.18),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 98,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: Expanded(
+    return Padding(
+      padding: const EdgeInsets.only(
+        bottom: 8,
+      ),
+      child: Card(
+        elevation: 10,
+        shadowColor: Colors.black.withOpacity(0.18),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 98,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(4),
+          ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -79,7 +82,7 @@ class OngoingItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(
                   bottom: 14,
-                  right: 8,
+                  right: 10,
                 ),
                 child: Text(
                   'Shipping',
