@@ -3,8 +3,8 @@ import 'package:dikkan/Core/utils/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class OnGoingBody extends StatelessWidget {
-  const OnGoingBody({
+class EmptyOnGoingBody extends StatelessWidget {
+  const EmptyOnGoingBody({
     super.key,
   });
 
