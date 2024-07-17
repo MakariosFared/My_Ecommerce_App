@@ -1,7 +1,4 @@
-import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Features/orders/presentation/views/widgets/ongoing_body.dart';
-import 'package:dikkan/Features/orders/presentation/views/widgets/ongoing_item.dart';
-import 'package:dikkan/constant.dart';
+import 'package:dikkan/Features/orders/presentation/views/widgets/ongoing_item_list_view.dart';
 import 'package:flutter/material.dart';
 
 class OrdersViewBody extends StatelessWidget {
@@ -36,21 +33,6 @@ class OrdersViewBody extends StatelessWidget {
   }
 }
 
-class OngoingItemsListView extends StatelessWidget {
-  const OngoingItemsListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-        vertical: 20,
-      ),
-      children: const [
-        OngoingItem(),
-      ],
-    );
-  }
-}
 
 
