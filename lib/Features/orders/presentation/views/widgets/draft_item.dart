@@ -1,16 +1,13 @@
 import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Features/orders/data/models/ongoing_item_model.dart';
-import 'package:dikkan/constant.dart';
+import 'package:dikkan/Features/orders/data/models/draft_item_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class OngoingItem extends StatelessWidget {
-  const OngoingItem({
-    super.key,
-    required this.ongoingItemModel,
-  });
+class DraftItem extends StatelessWidget {
+  const DraftItem({super.key, required this.draftItemModel});
 
-  final OngoingItemModel ongoingItemModel;
 
+final DraftItemModel draftItemModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,8 +28,8 @@ class OngoingItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              //TODO: #1 image
               Container(
+                //TODO: #1 image
                 width: 95,
                 decoration: const BoxDecoration(
                   color: Color(0xffC5CEE0),
@@ -52,9 +49,9 @@ class OngoingItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
+                      draftItemModel.productName,
                       textWidthBasis: TextWidthBasis.parent,
                       overflow: TextOverflow.ellipsis,
-                      ongoingItemModel.productName,
                       style: Styles.textStyleSfProDisplayRegular15.copyWith(
                         fontWeight: FontWeight.w600,
                         color: const Color(0xff222B45),
@@ -62,17 +59,18 @@ class OngoingItem extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
-                          'ID: ',
-                          style: Styles.textStyleSfProDisplayRegular12.copyWith(
-                            color: kGreenColor,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        SvgPicture.asset(
+                          'assets/images/draft location icon.svg',
+                          fit: BoxFit.scaleDown,
+                        ),
+                        const SizedBox(
+                          width: 6,
                         ),
                         Text(
-                          ongoingItemModel.id,
+                          draftItemModel.location,
                           style: Styles.textStyleSfProDisplayRegular12.copyWith(
-                            fontWeight: FontWeight.w600,
+                            color: const Color(0xffACB1C0),
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],
@@ -82,26 +80,12 @@ class OngoingItem extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            '${ongoingItemModel.nubOfItems} Items',
+                            '${draftItemModel.numberOfItems} Items',
                             style:
                                 Styles.textStyleSfProDisplayRegular12.copyWith(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               fontSize: 13,
                               color: const Color(0xffACB1C0),
-                            ),
-                          ),
-                          const Spacer(),
-                          Text(
-                            ongoingItemModel.state,
-                            style:
-                                Styles.textStyleSfProDisplayRegular12.copyWith(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 13,
-                              color: ongoingItemModel.state == 'Shipping'
-                                  ? kGreenColor
-                                  : ongoingItemModel.state == 'Waiting'
-                                      ? const Color(0xff25418B)
-                                      : const Color(0xffE02020),
                             ),
                           ),
                         ],

@@ -1,3 +1,5 @@
+import 'package:dikkan/Features/orders/presentation/views/widgets/draft_item_list_view.dart';
+import 'package:dikkan/Features/orders/presentation/views/widgets/ongoing_body.dart';
 import 'package:dikkan/Features/orders/presentation/views/widgets/ongoing_item_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -13,26 +15,19 @@ class OrdersViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBarView(
       controller: tabController,
-      children: [
-        // const EmptyOnGoingBody(),
-        const OngoingItemsListView(),
-        Center(
-          child: Text(
-            'history',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-        ),
-        Center(
-          child: Text(
-            'draft',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-        ),
+      children: const [
+        EmptyOnGoingBody(),
+        OngoingItemsListView(),
+        // Center(
+        //   child: Text(
+        //     'History',
+        //     style: Theme.of(context).textTheme.titleLarge,
+        //   ),
+        // ),
+        DraftItemListView()
       ],
     );
   }
 }
-
-
 
 
