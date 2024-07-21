@@ -1,5 +1,5 @@
 import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Features/orders/presentation/views/widgets/orders_view_body.dart';
+import 'package:dikkan/Features/my_favorites/presentation/views/widgets/my_favorites_view_body.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -29,11 +29,11 @@ class _MyFavoritesViewState extends State<MyFavoritesView>
     return Scaffold(
       backgroundColor: const Color(0xffF7F9FC),
       appBar: AppBar(
-        leadingWidth: 0,
-        leading: const SizedBox(),
+        // leadingWidth: 0,
+        // leading: const SizedBox(),
         toolbarHeight: 100,
         title: const Text(
-          'Orders',
+          'Favorites',
           style: Styles.textStyleSfProDisplayBold26,
         ),
         backgroundColor: Colors.white,
@@ -62,7 +62,7 @@ class _MyFavoritesViewState extends State<MyFavoritesView>
           ],
         ),
       ),
-      body: OrdersViewBody(tabController: tabController),
+      body: MyFavoritesViewBody(tabController: tabController),
     );
   }
 }
