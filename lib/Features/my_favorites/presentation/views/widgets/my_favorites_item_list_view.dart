@@ -10,16 +10,22 @@ class MyFavoritesItemListView extends StatelessWidget {
       price: '100',
       productName: 'Matcha Milk Tea Special',
       shopName: 'Royal Drink & Coffee',
+      rating: 4.5,
+      count: 72,
     ),
     MyFavoriteItemModel(
       price: '100',
       productName: 'Pan-fried Salmon',
       shopName: 'Royal Drink & Coffee',
+      rating: 4.6,
+      count: 34,
     ),
     MyFavoriteItemModel(
       price: '100',
       productName: 'Steamed Asparagus',
       shopName: 'Royal Drink & Coffee',
+      rating: 4.4,
+      count: 56,
     ),
   ];
   @override

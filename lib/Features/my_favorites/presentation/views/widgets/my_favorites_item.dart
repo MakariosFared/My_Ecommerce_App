@@ -77,9 +77,11 @@ class MyFavoritesItem extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      // width: MediaQuery.of(context).size.width - 157,
-                      child: Rating(),
+                    SizedBox(
+                      child: Rating(
+                        rating: myFavoriteItemModel.rating,
+                        count: myFavoriteItemModel.count,
+                      ),
                     ),
                   ],
                 ),
@@ -122,5 +124,3 @@ class MyFavoritesItem extends StatelessWidget {
     );
   }
 }
-
-
