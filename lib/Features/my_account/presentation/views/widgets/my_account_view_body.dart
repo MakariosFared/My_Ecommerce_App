@@ -30,10 +30,10 @@ class MyAccountViewBody extends StatelessWidget {
                           leadingImage: 'assets/images/Location.svg',
                           title: 'My Addresses',
                         ),
-                        CustomListTile(
-                          title: 'Family Members',
-                          leadingImage: 'assets/images/people.svg',
-                        ),
+                        // CustomListTile(
+                        //   title: 'Family Members',
+                        //   leadingImage: 'assets/images/people.svg',
+                        // ),
                         CustomListTile(
                           leadingImage: 'assets/images/Heart.svg',
                           title: 'My Favorites',

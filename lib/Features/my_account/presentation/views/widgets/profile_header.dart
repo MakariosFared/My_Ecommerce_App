@@ -19,31 +19,31 @@ class ProfileHeader extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 33),
           child: Row(
-            mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
-                highlightColor: Colors.transparent,
-                alignment: Alignment.topLeft,
-                iconSize: 24,
-                padding: EdgeInsets.zero,
-                onPressed: () {
+              GestureDetector(
+                onTap: () {
                   Navigator.pop(context);
                 },
-                icon: const Icon(
-                  size: 24,
+                child: const Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
+                  textDirection: TextDirection.ltr,
                 ),
               ),
+        
+              const Spacer(),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ClipOval(
-                    child: SvgPicture.asset(
-                      height: 60,
-                      width: 60,
-                      'assets/images/Profile.svg',
+                  Center(
+                    child: ClipOval(
+                      child: SvgPicture.asset(
+                        height: 60,
+                        width: 60,
+                        'assets/images/Profile.svg',
+                      ),
                     ),
                   ),
                   Padding(
@@ -70,6 +70,7 @@ class ProfileHeader extends StatelessWidget {
                   ),
                 ],
               ),
+              const Spacer(),
               GestureDetector(
                 onTap: () {
                   GoRouter.of(context).push(AppRouter.kEditProfile);
