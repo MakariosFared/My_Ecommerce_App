@@ -1,10 +1,17 @@
 import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/Features/my_favorites/data/models/my_favorite_item_model.dart';
+import 'package:dikkan/Features/my_favorites/presentation/views/widgets/rating.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MyFavoritesItem extends StatelessWidget {
-  const MyFavoritesItem({super.key});
+  const MyFavoritesItem({
+    super.key,
+    required this.myFavoriteItemModel,
+  });
 
+  final MyFavoriteItemModel myFavoriteItemModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +29,6 @@ class MyFavoritesItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
           child: Row(
-            mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               //TODO: #1 image
@@ -46,54 +52,68 @@ class MyFavoritesItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      textWidthBasis: TextWidthBasis.parent,
-                      overflow: TextOverflow.ellipsis,
-                      'zz',
+                      myFavoriteItemModel.productName,
                       style: Styles.textStyleSfProDisplayRegular15.copyWith(
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w700,
                         color: const Color(0xff222B45),
                       ),
                     ),
                     Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'ID: ',
-                          style: Styles.textStyleSfProDisplayRegular12.copyWith(
-                            color: kGreenColor,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        SvgPicture.asset(
+                          'assets/images/restaurant.svg',
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(
+                          width: 6,
                         ),
                         Text(
-                          'zz',
+                          myFavoriteItemModel.shopName,
                           style: Styles.textStyleSfProDisplayRegular12.copyWith(
                             fontWeight: FontWeight.w600,
+                            color: const Color(0xff8F9BB3),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width - 157,
-                      child: Row(
-                        children: [
-                          Text(
-                            'zz',
-                            style:
-                                Styles.textStyleSfProDisplayRegular12.copyWith(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 13,
-                              color: const Color(0xffACB1C0),
-                            ),
-                          ),
-                          const Spacer(),
-                          Text(
-                            "zz",
-                            
-                          ),
-                        ],
-                      ),
+                    const SizedBox(
+                      // width: MediaQuery.of(context).size.width - 157,
+                      child: Rating(),
                     ),
                   ],
                 ),
+              ),
+              const Spacer(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      top: 15,
+                      right: 15,
+                    ),
+                    child: Icon(
+                      Icons.bookmark,
+                      color: kGreenColor,
+                      size: 28,
+                    ),
+                  ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      bottom: 10,
+                      right: 10,
+                    ),
+                    child: Text(
+                      '${myFavoriteItemModel.price} SAR',
+                      style: Styles.textStyleSfProDisplayRegular12.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: kGreenColor,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -102,3 +122,5 @@ class MyFavoritesItem extends StatelessWidget {
     );
   }
 }
+
+

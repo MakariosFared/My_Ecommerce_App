@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="7.583" height="8.667" viewBox="0 0 7.583 8.667">
+  <g id="restaurant" opacity="0.7">
+    <g id="home">
+      <path id="Path" d="M0,0H1.625V3.25H0Z" transform="translate(2.708 4.875)" fill="#111"/>
+      <path id="Path-2" data-name="Path" d="M7.339,3.544,4.091.128a.413.413,0,0,0-.6,0L.244,3.548A.88.88,0,0,0,0,4.168V7.8a.857.857,0,0,0,.8.867h1.31v-3.9a.427.427,0,0,1,.421-.433H5.056a.427.427,0,0,1,.421.433v3.9h1.31a.857.857,0,0,0,.8-.867V4.168A.911.911,0,0,0,7.339,3.544Z" transform="translate(0 0)" fill="#111"/>
+    </g>
+  </g>
+</svg>

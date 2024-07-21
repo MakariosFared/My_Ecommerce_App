@@ -1,4 +1,4 @@
-import 'package:dikkan/Features/my_favorites/presentation/views/widgets/my_favorites_item.dart';
+import 'package:dikkan/Features/my_favorites/presentation/views/widgets/my_favorites_item_list_view.dart';
 import 'package:flutter/material.dart';
 
 class MyFavoritesViewBody extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyFavoritesViewBody extends StatelessWidget {
     return TabBarView(
       controller: tabController,
       children: const [
-        MyFavoritesItem(),
+        MyFavoritesItemListView(),
         Center(
           child: Text(
             'Suppliers',
