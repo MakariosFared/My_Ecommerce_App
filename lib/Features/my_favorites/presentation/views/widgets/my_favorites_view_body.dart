@@ -1,5 +1,4 @@
-import 'package:dikkan/Features/orders/presentation/views/widgets/draft_item_list_view.dart';
-import 'package:dikkan/Features/orders/presentation/views/widgets/ongoing_item_list_view.dart';
+import 'package:dikkan/Features/my_favorites/presentation/views/widgets/my_favorites_item.dart';
 import 'package:flutter/material.dart';
 
 class MyFavoritesViewBody extends StatelessWidget {
@@ -12,14 +11,12 @@ class MyFavoritesViewBody extends StatelessWidget {
     return TabBarView(
       controller: tabController,
       children: const [
-        OngoingItemsListView(),
-        // Center(
-        //   child: Text(
-        //     'History',
-        //     style: Theme.of(context).textTheme.titleLarge,
-        //   ),
-        // ),
-        DraftItemListView()
+        MyFavoritesItem(),
+        Center(
+          child: Text(
+            'Suppliers',
+          ),
+        ),
       ],
     );
   }

@@ -57,7 +57,7 @@ class _MyFavoritesViewState extends State<MyFavoritesView>
           dividerColor: const Color(0xffF7F9FC),
           controller: tabController,
           tabs: const [
-            Tab(text: 'Grocerys'),
+            Tab(text: 'Groceries'),
             Tab(text: 'Suppliers'),
           ],
         ),
