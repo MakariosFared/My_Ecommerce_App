@@ -7,6 +7,7 @@ import 'package:dikkan/Features/edit_profile/presentation/views/edit_profile_vie
 import 'package:dikkan/Features/home/presentation/views/home_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
 import 'package:dikkan/Features/my_account/presentation/views/my_account_view.dart';
+import 'package:dikkan/Features/my_favorites/presentation/views/my_favorites_view.dart';
 import 'package:dikkan/Features/search/presentation/views/filter_view.dart';
 import 'package:dikkan/Features/search/presentation/views/search_view.dart';
 import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
@@ -24,6 +25,7 @@ abstract class AppRouter {
   static const String kFilterView = '/filterView';
   static const String kMyAccount = '/myAccount';
   static const String kEditProfile = '/editProfile';
+  static const String kMyFavorites = '/myFavorites';
 
   static final router = GoRouter(
     routes: [
@@ -74,6 +76,10 @@ abstract class AppRouter {
       GoRoute(
         path: kEditProfile,
         builder: (context, state) => const EditProfileView(),
+      ),
+      GoRoute(
+        path: kMyFavorites,
+        builder: (context, state) => const MyFavoritesView(),
       ),
     ],
   );

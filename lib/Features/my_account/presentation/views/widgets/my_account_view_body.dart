@@ -1,8 +1,10 @@
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Features/my_account/presentation/views/widgets/custom_list_tile.dart';
 import 'package:dikkan/Features/my_account/presentation/views/widgets/custom_my_account_container.dart';
 import 'package:dikkan/Features/my_account/presentation/views/widgets/my_account_background.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyAccountViewBody extends StatelessWidget {
@@ -24,9 +26,9 @@ class MyAccountViewBody extends StatelessWidget {
                     const SizedBox(
                       height: 225,
                     ),
-                    const CustomMyAccountContainer(
+                    CustomMyAccountContainer(
                       children: [
-                        CustomListTile(
+                        const CustomListTile(
                           leadingImage: 'assets/images/Location.svg',
                           title: 'My Addresses',
                         ),
@@ -35,10 +37,12 @@ class MyAccountViewBody extends StatelessWidget {
                         //   leadingImage: 'assets/images/people.svg',
                         // ),
                         CustomListTile(
+                          onTap: () =>
+                              GoRouter.of(context).push(AppRouter.kMyFavorites),
                           leadingImage: 'assets/images/Heart.svg',
                           title: 'My Favorites',
                         ),
-                        CustomListTile(
+                        const CustomListTile(
                           leadingImage: 'assets/images/Vector.svg',
                           title: 'Payment Methods',
                         ),
