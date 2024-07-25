@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -21,23 +23,33 @@ class GrideListView extends StatelessWidget {
           childAspectRatio: 0.77,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return Container(
+          return SizedBox(
             width: 92,
             height: 118,
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                  image: AssetImage('assets/images/vegetables.png'),
-                  fit: BoxFit.fill),
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              color: const Color(0xffCCCCCC),
-            ),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                'Drow \nRanger',
-                style: Styles.textStyleSfProDisplayRegular15.copyWith(
-                  color: Colors.white,
-                ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    'assets/images/fresh orange.png',
+                    fit: BoxFit.cover,
+                  ),
+                  BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+                    child: Container(),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      ' Drow\nRanger',
+                      style: Styles.textStyleSfProDisplayRegular15.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           );

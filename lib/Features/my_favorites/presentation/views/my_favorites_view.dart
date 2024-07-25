@@ -29,8 +29,7 @@ class _MyFavoritesViewState extends State<MyFavoritesView>
     return Scaffold(
       backgroundColor: const Color(0xffF7F9FC),
       appBar: AppBar(
-        // leadingWidth: 0,
-        // leading: const SizedBox(),
+        surfaceTintColor: Colors.transparent,
         toolbarHeight: 100,
         title: const Text(
           'Favorites',
