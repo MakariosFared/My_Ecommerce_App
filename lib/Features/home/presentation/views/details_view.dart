@@ -17,21 +17,32 @@ class DetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Stack(
           fit: StackFit.passthrough,
           children: [
-            Image.asset(
-              height: MediaQuery.of(context).size.height * 0.39,
-              'assets/images/fresh orange.png',
-              fit: BoxFit.fill,
-            ),
-            const DetailsHeaderBar(),
+            DetailsProductImagesSection(),
+            DetailsHeaderBar(),
           ],
         ),
       ],
+    );
+  }
+}
+
+class DetailsProductImagesSection extends StatelessWidget {
+  const DetailsProductImagesSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      height: MediaQuery.of(context).size.height * 0.39,
+      'assets/images/fresh orange.png',
+      fit: BoxFit.fill,
     );
   }
 }
