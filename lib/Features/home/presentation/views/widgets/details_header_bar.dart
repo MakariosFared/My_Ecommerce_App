@@ -1,3 +1,4 @@
+import 'package:dikkan/Features/home/presentation/views/widgets/details_header_icon_button.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -16,61 +17,30 @@ class DetailsHeaderBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: IconButton(
-              color: Colors.black,
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
+          DetailsHeaderIconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           const Spacer(),
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: IconButton(
-              color: Colors.black,
-              icon: const Icon(
-                Icons.favorite,
-                color: kGreenColor,
-              ),
-              onPressed: () {
-              },
-            ),
+          DetailsHeaderIconButton(
+            icon: const Icon(Icons.favorite),
+            onPressed: () {},
+            iconColor: kGreenColor,
           ),
           const SizedBox(
             width: 16,
           ),
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
+          DetailsHeaderIconButton(
+            icon: const Icon(
+              Icons.more_vert,
             ),
-            child: IconButton(
-              color: Colors.black,
-              icon: const Icon(
-                Icons.more_vert,
-                color: Colors.black,
-              ),
-              onPressed: () {
-              },
-            ),
+            onPressed: () {},
           ),
         ],
       ),
     );
-  } 
+  }
 }
+
