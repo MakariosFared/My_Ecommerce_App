@@ -1,7 +1,7 @@
 import 'package:dikkan/Features/home/presentation/views/widgets/details_header_bar.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/details_product_images_section.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/dots_indicator.dart';
 import 'package:dikkan/constant.dart';
-import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 
 class DetailsView extends StatelessWidget {
@@ -78,27 +78,4 @@ class _DetailsViewBodyState extends State<DetailsViewBody> {
   }
 }
 
-class DetailsProductImagesSection extends StatelessWidget {
-  const DetailsProductImagesSection({
-    super.key,
-    required this.pageController,
-  });
 
-  final PageController pageController;
-
-  @override
-  Widget build(BuildContext context) {
-    return ExpandablePageView(
-      controller: pageController,
-      scrollDirection: Axis.horizontal,
-      children: List.generate(
-        4,
-        (index) => Image.asset(
-          height: MediaQuery.of(context).size.height * 0.39,
-          'assets/images/fresh orange.png',
-          fit: BoxFit.fill,
-        ),
-      ),
-    );
-  }
-}
