@@ -1,3 +1,4 @@
+import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 
 class CustomDotIndicator extends StatelessWidget {
@@ -9,9 +10,9 @@ class CustomDotIndicator extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       height: 8,
-      width: isActive ? 32 : 8,
+      width: 8,
       decoration: ShapeDecoration(
-        color: isActive ? const Color(0xFF4DB7F2) : const Color(0xFFE7E7E7),
+        color: isActive ? kGreenColor : const Color(0xFFD3DBE3),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
