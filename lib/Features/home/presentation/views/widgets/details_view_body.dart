@@ -1,6 +1,4 @@
-import 'package:dikkan/Features/home/presentation/views/widgets/details_header_bar.dart';
-import 'package:dikkan/Features/home/presentation/views/widgets/details_product_images_section.dart';
-import 'package:dikkan/Features/home/presentation/views/widgets/dots_indicator.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/product_details_header.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/product_details_info.dart';
 import 'package:flutter/material.dart';
 
@@ -30,24 +28,13 @@ class _DetailsViewBodyState extends State<DetailsViewBody> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Stack(
-          fit: StackFit.passthrough,
-          children: [
-            DetailsProductImagesSection(
-              pageController: pageController,
-            ),
-            const DetailsHeaderBar(),
-            Positioned(
-              bottom: 16,
-              right: 24,
-              child: DotsIndicator(currentPageIndex: currentPageIndex),
-            ),
-          ],
-        ),
+        ProductDetailsHeader(pageController: pageController, currentPageIndex: currentPageIndex),
         const ProductDetailsInfo(),
       ],
     );
   }
 }
+
+
 
 
