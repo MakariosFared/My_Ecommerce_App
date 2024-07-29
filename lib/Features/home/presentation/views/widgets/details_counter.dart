@@ -3,15 +3,15 @@ import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DerailsCounter extends StatefulWidget {
-  const DerailsCounter({super.key});
+class DetailsCounter extends StatefulWidget {
+  const DetailsCounter({super.key});
 
   @override
-  DerailsCounterState createState() => DerailsCounterState();
+  DetailsCounterState createState() => DetailsCounterState();
 }
 
-class DerailsCounterState extends State<DerailsCounter> {
-  int counter = 0; 
+class DetailsCounterState extends State<DetailsCounter> {
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
