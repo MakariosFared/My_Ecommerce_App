@@ -11,7 +11,7 @@ class DetailsCounter extends StatefulWidget {
 }
 
 class DetailsCounterState extends State<DetailsCounter> {
-  int counter = 0;
+  int counter = 20;
 
   @override
   Widget build(BuildContext context) {
