@@ -119,5 +119,3 @@ class EditProfileViewBody extends StatelessWidget {
     );
   }
 }
-
-

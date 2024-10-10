@@ -12,7 +12,8 @@ class ProductDetailsInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        // color: Colors.white,
+        color: Color(0xffFCFCFD),
       ),
       child: Column(
         children: [
@@ -59,8 +60,7 @@ class ProductDetailsInfo extends StatelessWidget {
             thickness: 1,
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             child: Row(
               children: [
                 Text(

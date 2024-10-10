@@ -6,8 +6,7 @@ import 'package:flutter_svg/svg.dart';
 class DraftItem extends StatelessWidget {
   const DraftItem({super.key, required this.draftItemModel});
 
-
-final DraftItemModel draftItemModel;
+  final DraftItemModel draftItemModel;
   @override
   Widget build(BuildContext context) {
     return Padding(

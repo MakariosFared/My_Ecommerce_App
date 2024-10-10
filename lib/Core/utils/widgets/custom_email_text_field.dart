@@ -7,7 +7,8 @@ class CustomTextField extends StatelessWidget {
       required this.hint,
       this.onChanged,
       this.suffixIcon,
-      required this.padding, this.keyboardType});
+      required this.padding,
+      this.keyboardType});
 
   final String hint;
   final Function(String)? onChanged;

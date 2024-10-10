@@ -6,7 +6,7 @@ class DraftItemModel {
 
   const DraftItemModel({
     required this.productName,
-     this.productImage,
+    this.productImage,
     required this.location,
     required this.numberOfItems,
   });

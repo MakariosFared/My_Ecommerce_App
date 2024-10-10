@@ -11,7 +11,8 @@ class ProductDetailsDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        // color: Colors.white,
+        color: Color(0xffFCFCFD),
       ),
       child: Padding(
         padding: const EdgeInsets.only(

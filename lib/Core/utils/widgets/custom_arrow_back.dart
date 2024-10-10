@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomArrowBack extends StatelessWidget {
   const CustomArrowBack({
-    super.key,required this.onTap,
+    super.key,
+    required this.onTap,
   });
 
   final void Function()? onTap;

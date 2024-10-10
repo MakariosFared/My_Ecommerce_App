@@ -32,7 +32,6 @@ class ProfileHeader extends StatelessWidget {
                   textDirection: TextDirection.ltr,
                 ),
               ),
-        
               const Spacer(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,

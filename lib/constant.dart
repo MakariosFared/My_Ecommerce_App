@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xffFAFAFA);
+const kPrimaryColor = Color(0xffF7F8F8);
 const kSecondaryColor = Color(0xffF7F9FC);
 
 const kPoppins = 'Poppins';

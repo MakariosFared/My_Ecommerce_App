@@ -16,7 +16,7 @@ class CurrentSpotBottomSheet extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 30,
               vertical: 18,
@@ -60,7 +60,7 @@ class CurrentSpotBottomSheet extends StatelessWidget {
                 const SizedBox(
                   width: 12,
                 ),
-                 Text(
+                Text(
                   'Your Location',
                   style: GoogleFonts.dmSans(
                     color: const Color(0xff9797A1),

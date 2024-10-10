@@ -25,5 +25,3 @@ class PopularCategories extends StatelessWidget {
     );
   }
 }
-
-

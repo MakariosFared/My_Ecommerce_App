@@ -15,35 +15,28 @@ class _SplashViewBodyState extends State<SplashViewBody>
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // initSlidingAnimation();
-
-  //   navigateToHome();
-  // }
-
   @override
   void initState() {
-  super.initState();
+    super.initState();
 
-  animationController = AnimationController(
-    duration: const Duration(seconds: 2), // Change this to your desired duration
-    vsync: this,
-  );
+    animationController = AnimationController(
+      duration:
+          const Duration(seconds: 2), // Change this to your desired duration
+      vsync: this,
+    );
 
-  slidingAnimation = Tween<Offset>(
-    begin: const Offset(0.0, -1.0),
-    end: Offset.zero,
-  ).animate(
-    CurvedAnimation(
-      parent: animationController,
-      curve: Curves.easeOut,
-    ),
-  );
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(0.0, -1.0),
+      end: Offset.zero,
+    ).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.easeOut,
+      ),
+    );
 
-  animationController.forward().then((_) => navigateToHome());
-}
+    animationController.forward().then((_) => navigateToHome());
+  }
 
   @override
   void dispose() {
@@ -66,13 +59,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 
-
   void navigateToHome() {
     Future.delayed(
       const Duration(seconds: 1),
       () {
         GoRouter.of(context).push(AppRouter.kIntroductionView);
-        
       },
     );
   }

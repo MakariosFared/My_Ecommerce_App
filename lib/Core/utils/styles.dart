@@ -59,7 +59,7 @@ abstract class Styles {
     fontWeight: FontWeight.w400,
   );
 
-static const textStyleSfProDisplayRegular12 = TextStyle(
+  static const textStyleSfProDisplayRegular12 = TextStyle(
     fontSize: 12,
     fontFamily: kSfProDisplay,
     fontWeight: FontWeight.w400,

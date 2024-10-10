@@ -16,7 +16,7 @@ class _PopularSectionState extends State<PopularSection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Padding(
+        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 13),
           child: Row(
             children: [
@@ -87,4 +87,3 @@ class _PopularSectionState extends State<PopularSection> {
     );
   }
 }
-

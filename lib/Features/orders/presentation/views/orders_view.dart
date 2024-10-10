@@ -67,5 +67,3 @@ class _OrdersViewState extends State<OrdersView>
     );
   }
 }
-
-
