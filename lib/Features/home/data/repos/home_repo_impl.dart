@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dikkan/Core/errors/failures.dart';
 import 'package:dikkan/Core/utils/api_service.dart';
-import 'package:dikkan/Features/home/data/models/category/category.model.dart';
+import 'package:dikkan/Features/home/data/models/all_product/category_product.model.dart';
 import 'package:dikkan/Features/home/data/repos/home_repo.dart';
 import 'package:dio/dio.dart';
 
