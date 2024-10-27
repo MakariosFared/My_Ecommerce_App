@@ -1,6 +1,7 @@
 import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/service_locator.dart';
 import 'package:dikkan/Features/home/data/repos/home_repo_impl.dart';
+import 'package:dikkan/Features/home/presentation/manager/all_product_cubit/all_product_cubit.dart';
 import 'package:dikkan/Features/home/presentation/manager/home_category_cubit/home_category_cubit.dart';
 import 'package:dikkan/constant.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,11 @@ class _DikkanAppState extends State<DikkanApp> {
       providers: [
         BlocProvider(
           create: (context) => HomeCategoryCubit(
+            getIt.get<HomeRepoImpl>(),
+          )..getAllCategories(),
+        ),
+        BlocProvider(
+          create: (context) => AllProductCubit(
             getIt.get<HomeRepoImpl>(),
           )..getAllCategories(),
         ),

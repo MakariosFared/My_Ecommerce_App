@@ -1,5 +1,5 @@
 import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Features/home/presentation/views/category_view.dart';
+import 'package:dikkan/Features/home/presentation/views/all_category_view.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/category_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

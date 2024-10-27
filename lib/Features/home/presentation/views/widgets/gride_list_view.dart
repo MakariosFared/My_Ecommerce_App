@@ -1,5 +1,9 @@
+import 'package:dikkan/Core/utils/widgets/custom_error_message.dart';
+import 'package:dikkan/Core/utils/widgets/custom_loading_indicator.dart';
+import 'package:dikkan/Features/home/presentation/manager/all_product_cubit/all_product_cubit.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/popular_grid_list_view_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GrideListView extends StatelessWidget {
   const GrideListView({super.key});
@@ -8,22 +12,34 @@ class GrideListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 13),
-      child: GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        clipBehavior: Clip.none,
-        scrollDirection: Axis.vertical,
-        itemCount: 12,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 18,
-          childAspectRatio: 0.77,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return const PopularGridListViewItem();
-        },
-      ),
+      child: BlocBuilder<AllProductCubit, AllProductState>(
+          builder: (context, state) {
+        if (state is AllProductSuccess) {
+          print("number of product :  ${state.allProduct.length}");
+          return SizedBox(
+            height: 2 * 130,
+            child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 8,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 18,
+                childAspectRatio: 0.77,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return PopularGridListViewItem(
+                  allProductModel: state.allProduct[index],
+                );
+              },
+            ),
+          );
+        } else if (state is AllProductFailure) {
+          return CustomErrorMessage(errMessage: state.errMessage);
+        } else {
+          return const CustomLoadingIndicator();
+        }
+      }),
     );
   }
 }

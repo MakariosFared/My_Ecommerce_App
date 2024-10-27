@@ -1,4 +1,4 @@
-import 'package:dikkan/Features/home/data/models/all_product/category_product.model.dart';
+import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
 import 'package:equatable/equatable.dart';
 
 class AllProductModel extends Equatable {
@@ -6,10 +6,10 @@ class AllProductModel extends Equatable {
   final String? title;
   final int? price;
   final String? description;
-  final List<String>? images;
+  final List<dynamic>? images;
   final DateTime? creationAt;
   final DateTime? updatedAt;
-  final CategoryModel? category;
+  final CategoryModel category;
 
   const AllProductModel({
     this.id,
@@ -19,24 +19,24 @@ class AllProductModel extends Equatable {
     this.images,
     this.creationAt,
     this.updatedAt,
-    this.category,
+    required this.category,
   });
 
-  factory AllProductModel.fromJson(Map<String, dynamic> json) => AllProductModel(
+  factory AllProductModel.fromJson(Map<String, dynamic> json) =>
+      AllProductModel(
         id: json['id'] as int?,
         title: json['title'] as String?,
         price: json['price'] as int?,
         description: json['description'] as String?,
-        images: json['images'] as List<String>?,
+        images: json['images'] as List<dynamic>?,
         creationAt: json['creationAt'] == null
             ? null
             : DateTime.parse(json['creationAt'] as String),
         updatedAt: json['updatedAt'] == null
             ? null
             : DateTime.parse(json['updatedAt'] as String),
-        category: json['category'] == null
-            ? null
-            : CategoryModel.fromJson(json['category'] as Map<String, dynamic>),
+        category:
+            CategoryModel.fromJson(json['category'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
@@ -47,7 +47,7 @@ class AllProductModel extends Equatable {
         'images': images,
         'creationAt': creationAt?.toIso8601String(),
         'updatedAt': updatedAt?.toIso8601String(),
-        'category': category?.toJson(),
+        'category': category.toJson(),
       };
 
   @override

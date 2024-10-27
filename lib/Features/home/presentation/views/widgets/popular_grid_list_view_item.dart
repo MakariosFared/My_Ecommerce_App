@@ -1,14 +1,19 @@
 import 'dart:ui';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/Features/home/data/models/categories_product/categories_product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class PopularGridListViewItem extends StatelessWidget {
   const PopularGridListViewItem({
     super.key,
+    required this.allProductModel,
   });
+
+  final AllProductModel allProductModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,28 +22,34 @@ class PopularGridListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kDetailsView);
       },
       child: SizedBox(
-        width: 92,
-        height: 118,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Stack(
             fit: StackFit.expand,
             children: [
-              Image.asset(
-                'assets/images/fresh orange.png',
+              CachedNetworkImage(
+                imageUrl: allProductModel.images![0],
                 fit: BoxFit.cover,
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
               BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 1.6, sigmaY: 1.6),
+                filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1.2),
                 child: Container(),
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Text(
-                  ' Drow\nRanger',
-                  style: Styles.textStyleSfProDisplayRegular15.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+                  child: Text(
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    allProductModel.title!,
+                    style: Styles.textStyleSfProDisplayRegular15.copyWith(
+                      color: allProductModel.images == null
+                          ? Colors.black
+                          : Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),

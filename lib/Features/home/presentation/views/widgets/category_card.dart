@@ -1,6 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Core/utils/styles.dart';
+import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -8,18 +11,25 @@ class CategoryCard extends StatelessWidget {
     required this.imageUrl,
     required this.categoryName,
     required this.padding,
+    required this.category,
   });
 
   final String imageUrl;
   final String categoryName;
   final EdgeInsetsGeometry padding;
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          context.push(
+            AppRouter.kCategoryDetailsView,
+            extra: category,
+          );
+        },
         child: Column(
           children: [
             SizedBox(

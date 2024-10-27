@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:dikkan/Features/home/data/models/all_product/category_product.model.dart';
+import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
 import 'package:dikkan/Features/home/data/repos/home_repo.dart';
 import 'package:equatable/equatable.dart';
 

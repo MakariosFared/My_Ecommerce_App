@@ -22,9 +22,11 @@ class CategoryListView extends StatelessWidget {
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
+                  final category = state.categories[index];
                   return CategoryCard(
-                    imageUrl: state.categories[index].image!,
-                    categoryName: state.categories[index].name!,
+                    imageUrl: category.image ?? '',
+                    categoryName: category.name ?? '',
+                    category: category,
                     padding: const EdgeInsets.only(
                       right: 16,
                     ),

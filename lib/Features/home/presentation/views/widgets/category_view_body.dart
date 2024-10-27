@@ -21,10 +21,12 @@ class AllCategoryViewBody extends StatelessWidget {
               mainAxisSpacing: 5,
               // crossAxisSpacing: 5,
             ),
-            physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: 18,
+            physics: const BouncingScrollPhysics(),
+            itemCount: state.categories.length,
             itemBuilder: (BuildContext context, int index) {
+              print("Length = ${state.categories.length}");
               return CategoryCard(
+                category: state.categories[index],
                 padding: const EdgeInsets.all(0),
                 imageUrl: state.categories[index].image!,
                 categoryName: state.categories[index].name!,

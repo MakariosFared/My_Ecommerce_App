@@ -1,9 +1,14 @@
+import 'package:dikkan/Core/utils/service_locator.dart';
 import 'package:dikkan/Features/auth/presentation/views/forget_password_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/log_in_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/reset_password_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/verification_otp_view.dart';
 import 'package:dikkan/Features/edit_profile/presentation/views/edit_profile_view.dart';
+import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
+import 'package:dikkan/Features/home/data/repos/home_repo_impl.dart';
+import 'package:dikkan/Features/home/presentation/manager/categories_products_cubit/categories_products_cubit.dart';
+import 'package:dikkan/Features/home/presentation/views/category_details_view.dart';
 import 'package:dikkan/Features/home/presentation/views/details_view.dart';
 import 'package:dikkan/Features/home/presentation/views/home_view.dart';
 import 'package:dikkan/Features/introduction/presentation/views/introduction_view.dart';
@@ -12,6 +17,7 @@ import 'package:dikkan/Features/my_favorites/presentation/views/my_favorites_vie
 import 'package:dikkan/Features/search/presentation/views/filter_view.dart';
 import 'package:dikkan/Features/search/presentation/views/search_view.dart';
 import 'package:dikkan/Features/splash/presentation/views/splash_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -28,6 +34,7 @@ abstract class AppRouter {
   static const String kEditProfile = '/editProfile';
   static const String kMyFavorites = '/myFavorites';
   static const String kDetailsView = '/detailsView';
+  static const String kCategoryDetailsView = '/categoryDetailsView';
 
   static final router = GoRouter(
     routes: [
@@ -86,6 +93,21 @@ abstract class AppRouter {
       GoRoute(
         path: kDetailsView,
         builder: (context, state) => const DetailsView(),
+      ),
+      GoRoute(
+        path: kCategoryDetailsView,
+        // builder: (context, state) {
+        //   final category = state.extra as CategoryModel;
+        //   return CategoryDetailsViewBody(category: category);
+        // },
+        builder: (context, state) => BlocProvider(
+          create: (context) =>
+              CategoriesProductsCubit(getIt.get<HomeRepoImpl>()),
+          child: CategoryDetailsView(
+            category: state.extra as CategoryModel,
+           // categoryModel: state.extra as CategoryModel,
+          ),
+        ),
       ),
     ],
   );
