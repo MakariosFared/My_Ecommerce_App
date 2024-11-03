@@ -2,8 +2,7 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dikkan/Core/utils/app_router.dart';
-import 'package:dikkan/Core/utils/styles.dart';
-import 'package:dikkan/Features/home/data/models/categories_product/categories_product_model.dart';
+import 'package:dikkan/Features/home/data/models/all_product_model2/all_product_model2.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +12,7 @@ class PopularGridListViewItem extends StatelessWidget {
     required this.allProductModel,
   });
 
-  final AllProductModel allProductModel;
+  final AllProductModel2 allProductModel;
 
   @override
   Widget build(BuildContext context) {
@@ -28,27 +27,27 @@ class PopularGridListViewItem extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               CachedNetworkImage(
-                imageUrl: allProductModel.images![0],
-                fit: BoxFit.cover,
+                imageUrl: allProductModel.thumbnail!,
+                // fit: BoxFit.cover,
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
-              BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1.2),
-                child: Container(),
-              ),
+              // BackdropFilter(
+              //   filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1.2),
+              //   child: Container(),
+              // ),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
                   child: Text(
-                    maxLines: 2,
+                    // maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     allProductModel.title!,
-                    style: Styles.textStyleSfProDisplayRegular15.copyWith(
-                      color: allProductModel.images == null
-                          ? Colors.black
-                          : Colors.white,
-                      fontWeight: FontWeight.w600,
+                    style: const TextStyle(
+                      backgroundColor: Colors.black45,
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

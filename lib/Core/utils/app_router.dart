@@ -105,7 +105,7 @@ abstract class AppRouter {
               CategoriesProductsCubit(getIt.get<HomeRepoImpl>()),
           child: CategoryDetailsView(
             category: state.extra as CategoryModel,
-           // categoryModel: state.extra as CategoryModel,
+            // categoryModel: state.extra as CategoryModel,
           ),
         ),
       ),

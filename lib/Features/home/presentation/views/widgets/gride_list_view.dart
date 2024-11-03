@@ -17,10 +17,10 @@ class GrideListView extends StatelessWidget {
         if (state is AllProductSuccess) {
           print("number of product :  ${state.allProduct.length}");
           return SizedBox(
-            height: 2 * 130,
+            height: state.allProduct.length * 35,
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 8,
+              itemCount: state.allProduct.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
                 mainAxisSpacing: 10,

@@ -8,7 +8,6 @@ part 'categories_products_state.dart';
 class CategoriesProductsCubit extends Cubit<CategoriesProductsState> {
   CategoriesProductsCubit(this.homeRepo) : super(CategoriesProductsInitial());
 
-  
   final HomeRepo homeRepo;
   Future<void> getCategoriesProduct({required String category}) async {
     emit(CategoriesProductsLoading());

@@ -12,7 +12,7 @@ final class AllProductInitial extends AllProductState {}
 final class AllProductLoading extends AllProductState {}
 
 final class AllProductSuccess extends AllProductState {
-  final List<AllProductModel> allProduct;
+  final List<AllProductModel2> allProduct;
 
   const AllProductSuccess(this.allProduct);
 }
