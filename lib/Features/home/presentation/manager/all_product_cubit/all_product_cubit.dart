@@ -11,7 +11,7 @@ class AllProductCubit extends Cubit<AllProductState> {
   final HomeRepo homeRepo;
   Future<void> getAllCategories() async {
     emit(AllProductLoading());
-    var result = await homeRepo.fetchAllProducts();
+    var result = await homeRepo.fetchAllProducts(limit: 20, skip: 20);
 
     result.fold((failure) {
       emit(AllProductFailure(failure.errMessage));

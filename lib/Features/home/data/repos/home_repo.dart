@@ -6,7 +6,8 @@ import 'package:dikkan/Features/home/data/models/categories_product/category_mod
 
 abstract class HomeRepo {
   Future<Either<Failure, List<CategoryModel>>> getHomeCategory();
-  Future<Either<Failure, List<AllProductModel2>>> fetchAllProducts();
+  Future<Either<Failure, List<AllProductModel2>>> fetchAllProducts(
+      {required int limit, required int skip});
   Future<Either<Failure, List<AllProductModel>>> getCategoryProduct(
       {required String category});
 }

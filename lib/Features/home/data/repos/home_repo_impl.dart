@@ -44,34 +44,30 @@ class HomeRepoImpl implements HomeRepo {
       }
       // List<AllProductModel> categoriesProducts =
       //     data.map((item) => AllProductModel.fromJson(item)).toList();
-
       return Right(categoriesProducts);
     } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       }
-
       return Left(ServerFailure(e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, List<AllProductModel2>>> fetchAllProducts() async {
+  Future<Either<Failure, List<AllProductModel2>>> fetchAllProducts(
+      {required int limit, required int skip}) async {
     try {
-      var data = await apiService.get(endPoint: "products/");
-      // log(data.toString());
+      var data =
+          await apiService.get(endPoint: "products?limit=$limit&skip=$skip");
       List<AllProductModel2> products = [];
       for (var item in data["products"]) {
         products.add(AllProductModel2.fromJson(item));
       }
-      // print('data = $data');
-
       return Right(products);
     } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       }
-
       return Left(ServerFailure(e.toString()));
     }
   }

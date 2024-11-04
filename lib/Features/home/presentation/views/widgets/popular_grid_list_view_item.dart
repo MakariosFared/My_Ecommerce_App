@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dikkan/Core/utils/app_router.dart';
 import 'package:dikkan/Features/home/data/models/all_product_model2/all_product_model2.dart';
@@ -28,7 +26,6 @@ class PopularGridListViewItem extends StatelessWidget {
             children: [
               CachedNetworkImage(
                 imageUrl: allProductModel.thumbnail!,
-                // fit: BoxFit.cover,
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
               // BackdropFilter(
