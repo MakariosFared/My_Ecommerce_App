@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dikkan/Core/utils/styles.dart';
 import 'package:dikkan/Core/utils/widgets/custom_error_message.dart';
 import 'package:dikkan/Core/utils/widgets/custom_loading_indicator.dart';
-import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
+import 'package:dikkan/Features/home/data/models/category_model/category.model.dart';
 import 'package:dikkan/Features/home/presentation/manager/categories_products_cubit/categories_products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,7 +39,7 @@ class CategoryDetailsViewBody extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: CachedNetworkImage(
-                        imageUrl: state.categoriesProduct[index].images![0],
+                        imageUrl: "",
                         placeholder: (context, url) => const Center(
                           child: CircularProgressIndicator(),
                         ),

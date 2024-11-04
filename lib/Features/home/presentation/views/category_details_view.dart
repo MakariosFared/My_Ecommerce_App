@@ -1,4 +1,4 @@
-import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
+import 'package:dikkan/Features/home/data/models/category_model/category.model.dart';
 import 'package:dikkan/Features/home/presentation/manager/categories_products_cubit/categories_products_cubit.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/category_details_view_body.dart';
 import 'package:flutter/material.dart';

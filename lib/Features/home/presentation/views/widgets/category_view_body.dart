@@ -2,6 +2,7 @@ import 'package:dikkan/Core/utils/widgets/custom_error_message.dart';
 import 'package:dikkan/Core/utils/widgets/custom_loading_indicator.dart';
 import 'package:dikkan/Features/home/presentation/manager/home_category_cubit/home_category_cubit.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/category_card.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/get_category_image_url_method.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,11 +25,10 @@ class AllCategoryViewBody extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: state.categories.length,
             itemBuilder: (BuildContext context, int index) {
-              print("Length = ${state.categories.length}");
               return CategoryCard(
                 category: state.categories[index],
                 padding: const EdgeInsets.all(0),
-                imageUrl: state.categories[index].image!,
+                imageUrl: getCategoryImageUrl(state.categories[index].name!),
                 categoryName: state.categories[index].name!,
               );
             },

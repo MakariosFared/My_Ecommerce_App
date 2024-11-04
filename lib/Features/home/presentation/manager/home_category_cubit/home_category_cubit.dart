@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
+import 'package:dikkan/Features/home/data/models/category_model/category.model.dart';
 import 'package:dikkan/Features/home/data/repos/home_repo.dart';
 import 'package:equatable/equatable.dart';
 
@@ -11,7 +11,7 @@ class HomeCategoryCubit extends Cubit<HomeCategoryState> {
   final HomeRepo homeRepo;
   Future<void> getAllCategories() async {
     emit(HomeCategoryLoading());
-    var result = await homeRepo.getHomeCategory();
+    var result = await homeRepo.fetchHomeCategories();
 
     result.fold((failure) {
       emit(HomeCategoryFailure(failure.errMessage));

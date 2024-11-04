@@ -8,9 +8,15 @@ class ApiService {
 
   ApiService(this._dio);
 
-  Future<Map<String, dynamic>> get({required String endPoint}) async {
+  Future<dynamic> get({required String endPoint}) async {
     var response = await _dio.get('$_baseUrl$endPoint');
 
-    return response.data;
+    if (response.data is List) {
+      return response.data as List<dynamic>;
+    } else if (response.data is Map) {
+      return response.data as Map<String, dynamic>;
+    } else {
+      throw Exception('Unexpected response type');
+    }
   }
 }

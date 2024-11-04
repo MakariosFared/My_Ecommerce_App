@@ -2,6 +2,7 @@ import 'package:dikkan/Core/utils/widgets/custom_error_message.dart';
 import 'package:dikkan/Core/utils/widgets/custom_loading_indicator.dart';
 import 'package:dikkan/Features/home/presentation/manager/home_category_cubit/home_category_cubit.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/category_card.dart';
+import 'package:dikkan/Features/home/presentation/views/widgets/get_category_image_url_method.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,8 +25,8 @@ class CategoryListView extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   final category = state.categories[index];
                   return CategoryCard(
-                    imageUrl: category.image ?? '',
-                    categoryName: category.name ?? '',
+                    imageUrl: getCategoryImageUrl(category.name!),
+                    categoryName: category.name!,
                     category: category,
                     padding: const EdgeInsets.only(
                       right: 16,
@@ -43,4 +44,6 @@ class CategoryListView extends StatelessWidget {
       },
     );
   }
+
+  
 }

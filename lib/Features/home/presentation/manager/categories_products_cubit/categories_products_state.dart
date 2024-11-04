@@ -18,7 +18,7 @@ final class CategoriesProductsFailure extends CategoriesProductsState {
 }
 
 final class CategoriesProductsSuccess extends CategoriesProductsState {
-  final List<AllProductModel> categoriesProduct;
+  final List<AllProductModel2> categoriesProduct;
 
   const CategoriesProductsSuccess(this.categoriesProduct);
 }

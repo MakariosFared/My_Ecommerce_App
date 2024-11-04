@@ -5,7 +5,7 @@ import 'package:dikkan/Features/auth/presentation/views/reset_password_view.dart
 import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/verification_otp_view.dart';
 import 'package:dikkan/Features/edit_profile/presentation/views/edit_profile_view.dart';
-import 'package:dikkan/Features/home/data/models/categories_product/category_model.dart';
+import 'package:dikkan/Features/home/data/models/category_model/category.model.dart';
 import 'package:dikkan/Features/home/data/repos/home_repo_impl.dart';
 import 'package:dikkan/Features/home/presentation/manager/categories_products_cubit/categories_products_cubit.dart';
 import 'package:dikkan/Features/home/presentation/views/category_details_view.dart';
