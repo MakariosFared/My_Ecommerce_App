@@ -39,7 +39,7 @@ class CategoryDetailsViewBody extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: CachedNetworkImage(
-                        imageUrl: "",
+                        imageUrl: state.categoriesProduct[index].thumbnail!,
                         placeholder: (context, url) => const Center(
                           child: CircularProgressIndicator(),
                         ),

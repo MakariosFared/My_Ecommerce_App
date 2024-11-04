@@ -11,7 +11,11 @@ class CategoriesProductsCubit extends Cubit<CategoriesProductsState> {
   final HomeRepo homeRepo;
   Future<void> getCategoriesProduct({required String category}) async {
     emit(CategoriesProductsLoading());
-    var result = await homeRepo.getCategoryProduct(category: category);
+    var result = await homeRepo.getCategoryProduct(
+      category: category,
+      limit: 194,
+      skip: 0,
+    );
 
     result.fold((failure) {
       emit(CategoriesProductsFailure(failure.errMessage));

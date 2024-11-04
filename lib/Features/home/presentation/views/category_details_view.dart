@@ -11,6 +11,7 @@ class CategoryDetailsView extends StatefulWidget {
   });
 
   final CategoryModel category;
+
   @override
   State<CategoryDetailsView> createState() => _CategoryDetailsViewState();
 }
@@ -19,7 +20,7 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
   @override
   void initState() {
     BlocProvider.of<CategoriesProductsCubit>(context)
-        .getCategoriesProduct(category: widget.category.name!);
+        .getCategoriesProduct(category: widget.category.slug!);
     super.initState();
   }
 

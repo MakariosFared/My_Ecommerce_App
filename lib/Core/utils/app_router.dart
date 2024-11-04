@@ -96,16 +96,11 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kCategoryDetailsView,
-        // builder: (context, state) {
-        //   final category = state.extra as CategoryModel;
-        //   return CategoryDetailsViewBody(category: category);
-        // },
         builder: (context, state) => BlocProvider(
           create: (context) =>
               CategoriesProductsCubit(getIt.get<HomeRepoImpl>()),
           child: CategoryDetailsView(
             category: state.extra as CategoryModel,
-            // categoryModel: state.extra as CategoryModel,
           ),
         ),
       ),

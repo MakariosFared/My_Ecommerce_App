@@ -8,5 +8,5 @@ abstract class HomeRepo {
   Future<Either<Failure, List<AllProductModel2>>> fetchAllProducts(
       {required int limit, required int skip});
   Future<Either<Failure, List<AllProductModel2>>> getCategoryProduct(
-      {required String category});
+      {required String category , required int limit, required int skip});
 }

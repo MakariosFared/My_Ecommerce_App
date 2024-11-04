@@ -35,17 +35,16 @@ class HomeRepoImpl implements HomeRepo {
 
   @override
   Future<Either<Failure, List<AllProductModel2>>> getCategoryProduct(
-      {required String category}) async {
+      {required String category, required int limit, required int skip}) async {
     try {
-      var data = await apiService.get(endPoint: "products/");
+      var data =
+          await apiService.get(endPoint: "products?limit=$limit&skip=$skip");
       List<AllProductModel2> categoriesProducts = [];
       for (var item in data["products"]) {
-        if (item['category']['name'] == category && item['images'] != null) {
+        if (item['category'] == category) {
           categoriesProducts.add(AllProductModel2.fromJson(item));
         }
       }
-      // List<AllProductModel> categoriesProducts =
-      //     data.map((item) => AllProductModel.fromJson(item)).toList();
       return Right(categoriesProducts);
     } catch (e) {
       if (e is DioException) {
