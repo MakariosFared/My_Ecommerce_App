@@ -1,3 +1,4 @@
+import 'package:dikkan/Features/home/data/models/all_product_model2/all_product_model2.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/product_details_description.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/product_details_header.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/product_details_info.dart';
@@ -6,8 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailsViewBody extends StatefulWidget {
-  const DetailsViewBody({super.key});
+  const DetailsViewBody({super.key, required this.allProductModel});
 
+  final AllProductModel2 allProductModel;
   @override
   State<DetailsViewBody> createState() => _DetailsViewBodyState();
 }
@@ -34,12 +36,17 @@ class _DetailsViewBodyState extends State<DetailsViewBody> {
         ProductDetailsHeader(
           pageController: pageController,
           currentPageIndex: currentPageIndex,
+          allProductModel: widget.allProductModel,
         ),
-        const ProductDetailsInfo(),
+        ProductDetailsInfo(
+          allProductModel: widget.allProductModel,
+        ),
         const SizedBox(
           height: 8,
         ),
-        const ProductDetailsDescription(),
+        ProductDetailsDescription(
+          allProductModel: widget.allProductModel,
+        ),
         const SizedBox(
           height: 8,
         ),

@@ -15,7 +15,6 @@ class GrideListView extends StatelessWidget {
       child: BlocBuilder<AllProductCubit, AllProductState>(
           builder: (context, state) {
         if (state is AllProductSuccess) {
-          print("number of product :  ${state.allProduct.length}");
           return SizedBox(
             height: state.allProduct.length * 35,
             child: GridView.builder(

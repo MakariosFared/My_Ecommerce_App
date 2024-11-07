@@ -40,14 +40,6 @@ class CategoryCard extends StatelessWidget {
                   imageUrl,
                   fit: BoxFit.cover,
                 ),
-                //  CachedNetworkImage(
-                //   imageUrl: imageUrl,
-                //   fit: BoxFit.cover,
-                //   placeholder: (context, url) => const Center(
-                //     child: CircularProgressIndicator(),
-                //   ),
-                //   errorWidget: (context, url, error) => const Icon(Icons.error),
-                // ),
               ),
             ),
             const SizedBox(

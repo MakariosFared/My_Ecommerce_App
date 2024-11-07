@@ -16,7 +16,10 @@ class PopularGridListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kDetailsView);
+        GoRouter.of(context).push(
+          AppRouter.kDetailsView,
+          extra: allProductModel,
+        );
       },
       child: SizedBox(
         child: ClipRRect(
@@ -28,16 +31,11 @@ class PopularGridListViewItem extends StatelessWidget {
                 imageUrl: allProductModel.thumbnail!,
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
-              // BackdropFilter(
-              //   filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1.2),
-              //   child: Container(),
-              // ),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
                   child: Text(
-                    // maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     allProductModel.title!,
                     style: const TextStyle(

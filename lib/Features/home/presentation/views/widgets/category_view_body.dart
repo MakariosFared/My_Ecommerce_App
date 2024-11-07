@@ -20,7 +20,6 @@ class AllCategoryViewBody extends StatelessWidget {
               crossAxisCount: 3,
               childAspectRatio: 1,
               mainAxisSpacing: 5,
-              // crossAxisSpacing: 5,
             ),
             physics: const BouncingScrollPhysics(),
             itemCount: state.categories.length,

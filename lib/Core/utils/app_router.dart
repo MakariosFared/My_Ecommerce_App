@@ -5,6 +5,7 @@ import 'package:dikkan/Features/auth/presentation/views/reset_password_view.dart
 import 'package:dikkan/Features/auth/presentation/views/sign_up_view.dart';
 import 'package:dikkan/Features/auth/presentation/views/verification_otp_view.dart';
 import 'package:dikkan/Features/edit_profile/presentation/views/edit_profile_view.dart';
+import 'package:dikkan/Features/home/data/models/all_product_model2/all_product_model2.dart';
 import 'package:dikkan/Features/home/data/models/category_model/category.model.dart';
 import 'package:dikkan/Features/home/data/repos/home_repo_impl.dart';
 import 'package:dikkan/Features/home/presentation/manager/categories_products_cubit/categories_products_cubit.dart';
@@ -92,7 +93,11 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kDetailsView,
-        builder: (context, state) => const DetailsView(),
+        builder: (context, state) {
+          return ProductDetailsView(
+            allProductModel: state.extra as AllProductModel2,
+          );
+        },
       ),
       GoRoute(
         path: kCategoryDetailsView,

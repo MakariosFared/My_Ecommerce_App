@@ -43,11 +43,6 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(child: PopularSection()),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 38.5,
-            ),
-          ),
           SliverToBoxAdapter(child: GrideListView()),
           SliverToBoxAdapter(
             child: SizedBox(

@@ -1,3 +1,4 @@
+import 'package:dikkan/Features/home/data/models/all_product_model2/all_product_model2.dart';
 import 'package:dikkan/Features/home/presentation/views/widgets/details_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,13 +7,14 @@ import 'package:google_fonts/google_fonts.dart';
 class ProductDetailsInfo extends StatelessWidget {
   const ProductDetailsInfo({
     super.key,
+    required this.allProductModel,
   });
+  final AllProductModel2 allProductModel;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        // color: Colors.white,
         color: Color(0xffFCFCFD),
       ),
       child: Column(
@@ -26,15 +28,21 @@ class ProductDetailsInfo extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Text(
-                  'Fresh Orange', //product name
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF3F4765),
+                Expanded(
+                  child: Text(
+                    overflow: TextOverflow.ellipsis,
+                    allProductModel.title ?? 'Not Found', //product name
+                    maxLines: 1,
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xFF3F4765),
+                    ),
                   ),
                 ),
-                const Spacer(),
+                const SizedBox(
+                  width: 4,
+                ),
                 SvgPicture.asset(
                   'assets/images/Shipping car.svg',
                 ),
@@ -64,7 +72,7 @@ class ProductDetailsInfo extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  '12,5 SAR ',
+                  '${allProductModel.price} SAR ',
                   style: GoogleFonts.roboto(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
